@@ -1,9 +1,13 @@
+import StartButton from "./components/start_button";
+import CreditButton from "./components/credit_button";
+
 const Home = () => {
     return (
-        <div>
-        <h1>Welcome to the Love Simulation Game</h1>
-        <p>In this game, you will experience a unique love story.</p>
-        <p>Choose your path wisely!</p>
+        <div className="home">
+            <h1 className="home-title">Love Simulation</h1>
+            <p className="home-description">A love simulation game.</p>
+            <StartButton />
+            <CreditButton />
         </div>
     );
     }
