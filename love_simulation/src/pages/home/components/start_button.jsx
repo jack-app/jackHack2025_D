@@ -1,6 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const StartButton = () => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+      navigate('/scenario_select', { replace: true });
+    };
+
   const styles = {
     body: {
       display: 'flex',
@@ -23,26 +30,9 @@ const StartButton = () => {
   };
   return (
     <div style={styles.body}>
-      <button style={styles.button}>tap to start</button>
+      <button style={styles.button} onClick={handleClick}>tap to start</button>
     </div>
   );
 };
-
-=======
-import { useNavigate } from 'react-router-dom';
-
-const StartButton = () => {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/scenario_select', { replace: true });
-  };
-
-  return (
-    <button className="start-button" onClick={handleClick}>
-      Start Game
-    </button>
-  );
-}
 
 export default StartButton;
