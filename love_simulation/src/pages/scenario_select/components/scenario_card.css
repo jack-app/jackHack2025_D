@@ -1,0 +1,27 @@
+.scenario-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ddd;
+    border: 2px solid #aaa;
+    border-radius: 10%;
+    padding: 10px;
+    width: 25%;
+    height: 600px;
+}
+  
+.scenario-image {
+    width: 90%;
+    margin: 2rem;
+}
+  
+.card-text {
+    margin: 8px 0;
+    font-size: 2rem;
+    text-align: center;
+}
+  
+.description-text {
+    margin: 8px 0 16px 0;
+}
+  
