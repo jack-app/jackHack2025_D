@@ -12,10 +12,23 @@
 	"postStartCommand": "cd love_simulation && yarn install",
 
 	// Run every time you attach/exec into the container:
-	"postAttachCommand": "cd love_simulation && yarn install"
+	"postAttachCommand": "cd love_simulation && yarn install",
+
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"files.watcherExclude": {
+					"**/node_modules/**": true
+				}
+			}
+		}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
+	"forwardPorts": [
+		3000,
+		8080
+	]
 
 	// Configure tool-specific properties.
 	// "customizations": {},
