@@ -1,0 +1,313 @@
+{
+  "scenarios": [
+      {
+        "title": "テストシナリオ0",
+        "scenes" :[
+          {
+            "sceneId": 1,
+            "contents": [
+              {
+                "id": 1,
+                "text": "こんにちは！今日はどこ行きたい？",
+                "choices": [
+                  { "text": "遊園地に行く", "likeability": 5,  "nextId": 2 },
+                  { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
+                  { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
+                ]
+              },
+              {
+                "id": 2,
+                "text": "遊園地！？楽しみ！今日はまず何に乗りたい？",
+                "choices": [
+                  { "text": "ジェットコースターに乗る", "likeability": 5,  "nextId": 4 },
+                  { "text": "観覧車に乗る",             "likeability": 2,  "nextId": 5 }
+                ]
+              },
+              {
+                "id": 3,
+                "text": "カフェいいね，ゆっくり話そ！何を飲む？",
+                "choices": [
+                  { "text": "カフェラテを注文する", "likeability": 4,  "nextId": 6 },
+                  { "text": "紅茶を注文する",       "likeability": 3,  "nextId": 7 }
+                ]
+              }
+            ]
+          },
+          {
+            "sceneId": 2,
+            "contents": [
+              {
+                "id": 4,
+                "text": "わあ，ジェットコースターは怖かったけど楽しかった？",
+                "choices": [
+                  { "text": "また乗りたい！",       "likeability": 3,  "nextId": 8 },
+                  { "text": "もういいかな",         "likeability": 1,  "nextId": 8 },
+                  { "text": "二度と乗らない",       "likeability": -4, "nextId": 8 }
+                ]
+              },
+              {
+                "id": 5,
+                "text": "静かな観覧車，景色が綺麗だね．何を話そうか？",
+                "choices": [
+                  { "text": "趣味の話をする",       "likeability": 4,  "nextId": 8 },
+                  { "text": "将来の夢を話す",       "likeability": 5,  "nextId": 8 },
+                  { "text": "つまらなかった",       "likeability": -3, "nextId": 8 }
+                ]
+              },
+              {
+                "id": 8,
+                "text": "今日の思い出ができたね！また遊びに行こう！",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 3,
+            "contents": [
+              {
+                "id": 6,
+                "text": "カフェラテいいね！ミルクの泡がふわふわ．味はどう？",
+                "choices": [
+                  { "text": "うん，美味しい！",        "likeability": 3,  "nextId": 9 },
+                  { "text": "ちょっと甘いかな",        "likeability": 1,  "nextId": 9 },
+                  { "text": "泡が全然ない",            "likeability": -2, "nextId": 9 }
+                ]
+              },
+              {
+                "id": 7,
+                "text": "紅茶の香りが落ち着くね．ゆったり話せる．",
+                "choices": [
+                  { "text": "そうだね",               "likeability": 2,  "nextId": 9 },
+                  { "text": "他の紅茶も試したい",     "likeability": 3,  "nextId": 9 },
+                  { "text": "香りが変な感じがする",   "likeability": -3, "nextId": 9 }
+                ]
+              },
+              {
+                "id": 9,
+                "text": "素敵な時間だったね．またお茶しよう！",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 4,
+            "contents": [
+              {
+                "id": 10,
+                "text": "帰り道、元カレ/元カノとばったり会った…！",
+                "choices": [
+                  { "text": "無視して足早に通り過ぎる", "likeability": -3, "nextId": 11 },
+                  { "text": "声をかけてしまう",         "likeability": 1,  "nextId": 11 }
+                ]
+              },
+              {
+                "id": 11,
+                "text": "元恋人と気まずい空気…どう切り抜ける？",
+                "choices": [
+                  { "text": "話題を無理やり変える",   "likeability": 2,  "nextId": 12 },
+                  { "text": "そのまま一緒に歩き続ける","likeability": 1, "nextId": 12 }
+                ]
+              },
+              {
+                "id": 12,
+                "text": "なんとかその場を切り抜けたけど、胸が苦しい…",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 5,
+            "contents": [
+              {
+                "id": 13,
+                "text": "突然の大雨で、傘が一つしかない！",
+                "choices": [
+                  { "text": "自分が傘をかぶせる", "likeability": 5,  "nextId": 14 },
+                  { "text": "二人で小さく寄り添う","likeability": 4,  "nextId": 14 },
+                  { "text": "走り去ってしまう",   "likeability": -5, "nextId": 15 }
+                ]
+              },
+              {
+                "id": 14,
+                "text": "雨の中、ぬれた袖が触れ合って…ドキドキする！",
+                "choices": [
+                  { "text": "心臓がバクバクする", "likeability": 3,  "nextId": 15 },
+                  { "text": "このまま続けたい",   "likeability": 1,  "nextId": 15 }
+                ]
+              },
+              {
+                "id": 15,
+                "text": "帰宅後、二人とも風邪ひきそうだけど特別な思い出になったね。",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 6,
+            "contents": [
+              {
+                "id": 16,
+                "text": "何か今日はうまくいかなかったみたい…",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "テストシナリオ1",
+        "scenes" :[
+          {
+            "sceneId": 1,
+            "contents": [
+              {
+                "id": 1,
+                "text": "こんにちは！今日はどこ行きたい？",
+                "choices": [
+                  { "text": "遊園地に行く", "likeability": 5,  "nextId": 2 },
+                  { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
+                  { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
+                ]
+              },
+              {
+                "id": 2,
+                "text": "遊園地！？楽しみ！今日はまず何に乗りたい？",
+                "choices": [
+                  { "text": "ジェットコースターに乗る", "likeability": 5,  "nextId": 4 },
+                  { "text": "観覧車に乗る",             "likeability": 2,  "nextId": 5 }
+                ]
+              },
+              {
+                "id": 3,
+                "text": "カフェいいね，ゆっくり話そ！何を飲む？",
+                "choices": [
+                  { "text": "カフェラテを注文する", "likeability": 4,  "nextId": 6 },
+                  { "text": "紅茶を注文する",       "likeability": 3,  "nextId": 7 }
+                ]
+              }
+            ]
+          },
+          {
+            "sceneId": 2,
+            "contents": [
+              {
+                "id": 4,
+                "text": "わあ，ジェットコースターは怖かったけど楽しかった？",
+                "choices": [
+                  { "text": "また乗りたい！",       "likeability": 3,  "nextId": 8 },
+                  { "text": "もういいかな",         "likeability": 1,  "nextId": 8 },
+                  { "text": "二度と乗らない",       "likeability": -4, "nextId": 8 }
+                ]
+              },
+              {
+                "id": 5,
+                "text": "静かな観覧車，景色が綺麗だね．何を話そうか？",
+                "choices": [
+                  { "text": "趣味の話をする",       "likeability": 4,  "nextId": 8 },
+                  { "text": "将来の夢を話す",       "likeability": 5,  "nextId": 8 },
+                  { "text": "つまらなかった",       "likeability": -3, "nextId": 8 }
+                ]
+              },
+              {
+                "id": 8,
+                "text": "今日の思い出ができたね！また遊びに行こう！",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 3,
+            "contents": [
+              {
+                "id": 6,
+                "text": "カフェラテいいね！ミルクの泡がふわふわ．味はどう？",
+                "choices": [
+                  { "text": "うん，美味しい！",        "likeability": 3,  "nextId": 9 },
+                  { "text": "ちょっと甘いかな",        "likeability": 1,  "nextId": 9 },
+                  { "text": "泡が全然ない",            "likeability": -2, "nextId": 9 }
+                ]
+              },
+              {
+                "id": 7,
+                "text": "紅茶の香りが落ち着くね．ゆったり話せる．",
+                "choices": [
+                  { "text": "そうだね",               "likeability": 2,  "nextId": 9 },
+                  { "text": "他の紅茶も試したい",     "likeability": 3,  "nextId": 9 },
+                  { "text": "香りが変な感じがする",   "likeability": -3, "nextId": 9 }
+                ]
+              },
+              {
+                "id": 9,
+                "text": "素敵な時間だったね．またお茶しよう！",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 4,
+            "contents": [
+              {
+                "id": 10,
+                "text": "帰り道、元カレ/元カノとばったり会った…！",
+                "choices": [
+                  { "text": "無視して足早に通り過ぎる", "likeability": -3, "nextId": 11 },
+                  { "text": "声をかけてしまう",         "likeability": 1,  "nextId": 11 }
+                ]
+              },
+              {
+                "id": 11,
+                "text": "元恋人と気まずい空気…どう切り抜ける？",
+                "choices": [
+                  { "text": "話題を無理やり変える",   "likeability": 2,  "nextId": 12 },
+                  { "text": "そのまま一緒に歩き続ける","likeability": 1, "nextId": 12 }
+                ]
+              },
+              {
+                "id": 12,
+                "text": "なんとかその場を切り抜けたけど、胸が苦しい…",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 5,
+            "contents": [
+              {
+                "id": 13,
+                "text": "突然の大雨で、傘が一つしかない！",
+                "choices": [
+                  { "text": "自分が傘をかぶせる", "likeability": 5,  "nextId": 14 },
+                  { "text": "二人で小さく寄り添う","likeability": 4,  "nextId": 14 },
+                  { "text": "走り去ってしまう",   "likeability": -5, "nextId": 15 }
+                ]
+              },
+              {
+                "id": 14,
+                "text": "雨の中、ぬれた袖が触れ合って…ドキドキする！",
+                "choices": [
+                  { "text": "心臓がバクバクする", "likeability": 3,  "nextId": 15 },
+                  { "text": "このまま続けたい",   "likeability": 1,  "nextId": 15 }
+                ]
+              },
+              {
+                "id": 15,
+                "text": "帰宅後、二人とも風邪ひきそうだけど特別な思い出になったね。",
+                "choices": []
+              }
+            ]
+          },
+          {
+            "sceneId": 6,
+            "contents": [
+              {
+                "id": 16,
+                "text": "何か今日はうまくいかなかったみたい…",
+                "choices": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+}
+  
