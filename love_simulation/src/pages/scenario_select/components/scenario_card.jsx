@@ -1,11 +1,16 @@
 import PropTypes from "prop-types";
+import { useNavigate } from 'react-router-dom';
 import "./scenario_card.css";
 
 const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`/main?scenarioTitle=${title}&scenarioId=1`, { replace: true });
+  };
   const difficultyFeature = "⭐️".repeat(difficulty) + "・".repeat(5 - difficulty);
 
   return (
-    <div className="scenario-card">
+    <div className="scenario-card" onClick={handleClick}>
       <p className="card-text">シナリオタイトル：<br/>{title}</p>
       {imagePath && (
         <img
