@@ -2,6 +2,9 @@
   "scenarios": [
       {
         "title": "テストシナリオ0",
+        "image": "/scenarioImages/thumbnail_0.png",
+        "difficulty": 3,
+        "description": "テストシナリオ0の説明文です．",
         "scenes" :[
           {
             "sceneId": 1,
@@ -156,6 +159,9 @@
       },
       {
         "title": "テストシナリオ1",
+        "image": "/scenarioImages/thumbnail_1.png",
+        "difficulty": 4,
+        "description": "テストシナリオ1の説明文です．",
         "scenes" :[
           {
             "sceneId": 1,
