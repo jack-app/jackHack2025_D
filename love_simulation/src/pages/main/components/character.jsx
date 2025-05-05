@@ -1,8 +1,8 @@
-const Character = ({ character }) => {
+const Character = ({ speaker }) => {
 
     return (
-        <div className="character" style={{fontSize: "40px", color: "white" }}>
-            {character}
+        <div className="character" style={{fontSize: "30px", color: "white" }}>
+            {speaker}
         </div>
     );
 };
