@@ -1,7 +1,7 @@
 const Character = ({ speaker }) => {
 
     return (
-        <div className="character" style={{fontSize: "32px", color: "white" }}>
+        <div className="character">
             {speaker}
         </div>
     );

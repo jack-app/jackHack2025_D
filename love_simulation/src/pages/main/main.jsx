@@ -152,8 +152,7 @@ const Main = () => {
                     <LoveMeter love={likeability} />
                 </div>  
                 <div onClick={nextLine}>
-                    <Character speaker={String(speaker)}/>
-                    <LineBox line={String(line)}/>
+                    <LineBox line={String(line)} speaker={speaker}/>
                 </div>
                 {isChoices ? (
                    <div
