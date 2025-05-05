@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import ScenarioCard from "./components/scenario_card";
+import "./scenario_select.css";
 
 const ScenarioSelect = () => {
     const [scenarios, setScenarios] = useState([]);
@@ -31,7 +32,7 @@ const ScenarioSelect = () => {
     const isRightDisabled = currentIndex >= scenarios.length - 3;
 
     return (
-        <div style={{ backgroundColor: 'rgb(223, 255, 227)', display: 'flex', gap: '5%', height: '100vh', margin: '0', justifyContent: 'center', alignItems: 'center', position: 'relative' }}>
+        <div className="scenario_select">
             {/* 左ボタン */}
             <div
                 style={{

@@ -1,0 +1,10 @@
+#scenario_select { 
+    background-color: rgb(223, 255, 227);
+    display: flex;
+    gap: 5%;
+    height: 100vh; 
+    margin: 0;
+    justify-content: center; 
+    align-items: center;
+    position: relative; 
+}
