@@ -8,6 +8,7 @@ import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
 import IsBackInfo from "./components/isBack_info";
 import "./main.css"
+import QuestionBox from "./components/question_window";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
@@ -77,14 +78,6 @@ const Main = () => {
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === "Enter") {
-                if (choice.length === 0) { 
-                    navigate("/end", {
-                        state: {
-                            Likeability: likeability,
-                        },
-                    });
-                    return;
-                }
                 nextLine();
             }
         };
@@ -96,6 +89,14 @@ const Main = () => {
     }, [choice, likeability, navigate]);
 
     const nextLine = () => {
+        if (choice.length === 0) { 
+          navigate("/end", {
+            state: {
+                Likeability: likeability,
+            },
+          });
+          return;
+        }
         if(nextId){
             setIsChoices(false);
             navigate("/main", {state: 
@@ -156,29 +157,45 @@ const Main = () => {
                     <LineBox line={String(line)}/>
                 </div>
                 {isChoices ? (
-                   <div
-                   style={{
-                       zIndex: 10,
-                       position: "absolute", 
-                       backgroundColor: "rgba(255, 255, 255, 0.8)",
-                       width: "100%",
-                       height: "30%",
-                       display: "flex",
-                       justifyContent: "center",
-                       alignItems: "center",
-                       bottom: 0,
-                   }}
-               >
-                    <ChoiceButton 
-                        isChoice={isChoices} 
-                        choice={choice} 
-                        likeability={likeability} 
-                        title={scenarioTitle}
-                        history={history}
-                        cancel_num={cancel_num}
-                        SetChoice={setIsChoices}
-                    />
-               </div>
+                    <div style={{ position: "absolute", width: "100%", height: "40%", bottom: 0 }}>
+                        <QuestionBox line={String(line)}/>
+                        <div
+                          style={{
+                              zIndex: 1,
+                              position: "absolute",
+                              backgroundColor: "rgba(255, 255, 255, 0.8)",
+                              width: "100%",
+                              height: "75%",
+                              display: "flex",
+                              justifyContent: "center",
+                              alignItems: "center",
+                              bottom: 0,
+                          }}
+                        >
+                            <div
+                                style={{
+                                    display: "grid",
+                                    gridTemplateColumns: "1fr 1fr",
+                                    gridTemplateRows: "1fr 1fr", 
+                                    width: "100%",
+                                    height: "100%",
+                                }}
+                            >
+                                {choice.map((item, index) => (
+                                    <ChoiceButton
+                                        key={index}
+                                        isChoice={isChoices}
+                                        choice={[item]}
+                                        likeability={likeability}
+                                        title={scenarioTitle}
+                                        history={history}
+                                        cancel_num={cancel_num}
+                                        SetChoice={setIsChoices}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    </div>
                 ) : (
                     <div onClick={nextLine}>
                         <Character character={String(character)} />

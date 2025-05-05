@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import ScenarioCard from "./components/scenario_card";
+import { useNavigate } from 'react-router-dom';
 import "./scenario_select.css";
 
 const ScenarioSelect = () => {
     const [scenarios, setScenarios] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch("/scenario.json")
@@ -32,8 +34,13 @@ const ScenarioSelect = () => {
     const isRightDisabled = currentIndex >= scenarios.length - 3;
 
     return (
-        <div className="scenario_select">
-            {/* 左ボタン */}
+        <>
+            <div className="header">
+                <div className="backButton" onClick={() => navigate(`/`)} />
+                <p className="select_title"> 遊びたいシナリオを選択してください </p>
+                <div className="dummy" />
+            </div>
+            <div className="scenario_select">
             <div
                 style={{
                     width: "50px",
@@ -67,7 +74,8 @@ const ScenarioSelect = () => {
                 }}
                 onClick={!isRightDisabled ? handleRightClick : undefined}
             />
-        </div>
+            </div>
+        </>
     );
 };
 

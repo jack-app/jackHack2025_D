@@ -42,6 +42,13 @@
   justify-content: center;
   text-align: center;
   line-height: 1.2;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#startButton:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+  cursor: pointer;
 }
 
 @keyframes title1 {
