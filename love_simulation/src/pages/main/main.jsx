@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
+import CancelButton from "./components/cancel_button";
+import MenuButton from "./components/menu_button";
+import LineBox  from "./components/line_box";
+import Character from "./components/character"
+import "./main.css"
+
+let num = "hello";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [scenarioId, setScenarioId] = useState(null);
     const [error, setError] = useState(null);
+    const [line, setNextLine] = useState(null);
+    const [character, setCharacter] = useState(null);
 
     const location = useLocation();
 
@@ -31,19 +40,28 @@ const Main = () => {
         }
     }, [scenarioId, scenario]);
 
+    const nextLine = () => {
+        setNextLine(num); // テスト用
+        console.log(num);
+    };
+
+    const nextCharacter = () => {
+        setCharacter();
+    };
+
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
-            <h1>Main Page</h1>
-            <p>Welcome to the main page of the Love Simulation game!</p>
-            {error && <p style={{ color: "red" }}>Error: {error}</p>}
-            {scenarioId && <p>Scenario ID: {scenarioId}</p>}
-            {scenarioId && scenario[scenarioId] && (
-                <div>
-                    <h2>Scenario Details</h2>
-                    <p>{scenario[scenarioId]}</p>
+            <div className="game-display">
+                <CancelButton className="cancelButton"/>
+                <MenuButton className="menuButton" />
+                <div className="scene-section">
+                    <LoveMeter love={10}/>
+                </div>  
+                <div onClick={nextLine}>
+                    <Character character={String(character)}/>
+                    <LineBox line={String(line)}/>
                 </div>
-            )}
-            <LoveMeter love={50} />
+            </div>
         </div>
     );
 };

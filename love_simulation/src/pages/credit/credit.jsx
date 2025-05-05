@@ -7,6 +7,6 @@ const Credit = () => {
         <p>Version: 1.0.0</p>
         </div>
     );
-    }
+    }   
 
 export default Credit;
