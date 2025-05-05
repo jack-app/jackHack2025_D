@@ -30,40 +30,64 @@
 }
 
 .lineBox {
+    border-top: 22px solid #21b3be;
+    border-right: 7px solid #21b3be;
+    border-left: 7px solid #21b3be;
+    border-bottom: 7px solid #21b3be;
+    border-left-style:groove;
+    border-bottom-style:groove;
+    border-right-style:groove;
     position: fixed;
-    z-index: 0;
-    margin: 16px 5%;
-    width: 90%;
-    height: 30%;
-    left: auto;
-    right: auto;
-    border-radius: 30px;
-    background-color: rgb(106, 103, 103);
-    bottom: 0;  
-    opacity: 0.7;
+    color: black;
+    font-size: 1.2rem;
+    bottom: 32px;
+    width: 85%;
+    height: 200px;
+    left: 7%;
+    background-color: rgb(200, 232, 255);
 }
 
+.line {
+    position: relative;
+    top: -60px;
+    padding: 30px 16px;
+    font-size: 28px;
+    color: black;
+    user-select: none;
+}
 
 .character {
-    position: fixed;
-    z-index: 1;
-    background-color: pink;
-    width: 240px;
-    height: 44px;
-    border-radius: 28px;
-    bottom: 29%;
-    left: 8%;
-    padding: 4px;
+    user-select: none;
+    font-size: 32px;
+    color: black;
+    font-weight: bold;
+    padding-top: 6px;
+    padding-left: 4px;
+    padding-bottom: 16px;
+    padding-right: 8px;
+    border-bottom: 7px solid #21b3be;
+    border-right: 7px solid #21b3be;
+    border-top: 7px solid #21b3be;
+    border-left: 7px solid #21b3be;
     text-align: center;
+    position: relative;
+    top: -60px;
+    left: -7px;
+    width: 240px;
+    height: 40px;
+    background-color: rgb(200, 232, 255);
+    border-style:groove
 }
 
 .love-meter {
     z-index: 2;
+    user-select: none;
     margin-top: 48px;
     margin-left: 32px;
 }
 
 .isbackTitle {
+    user-select: none;
     position: fixed;
     z-index: 1;
     background-color: rgba(205, 239, 250, 0.8);
