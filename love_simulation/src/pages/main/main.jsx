@@ -21,6 +21,7 @@ const Main = () => {
     const [likeability, setLikeability] = useState(0);
     const [scenarioTitle, setScenarioTitle] = useState("");
     const [history, setHistory] = useState({ likeability: [], scenarioId: [] });
+    const [character, setCharacter] = useState(null);
     const [cancel_num, setCancelNum] = useState(0);
     const [isShowTitleInfo, setisShowTitleInfo] = useState(false);
 
@@ -149,14 +150,6 @@ const Main = () => {
                 <button onClick={titleBackButton} className="menuButton" />
                 <div className="scene-section">
                     <LoveMeter love={likeability} />
-                    <ChoiceButton 
-                        isChoice={isChoices} 
-                        choice={choice} 
-                        likeability={likeability} 
-                        title={scenarioTitle}
-                        history={history}
-                        cancel_num={cancel_num}
-                    />
                 </div>  
                 <div onClick={nextLine}>
                     <Character speaker={String(speaker)}/>
@@ -176,17 +169,15 @@ const Main = () => {
                        bottom: 0,
                    }}
                >
-                    <div className="choice-button">
-                        {choice.map((item, index) => (
-                            <button
-                                key={index}
-                                className="choice-button-item"
-                                onClick={() => handleChoiceClick(item)}
-                            >
-                                {item.text || "No Text"}
-                            </button>
-                        ))}
-                    </div>
+                    <ChoiceButton 
+                        isChoice={isChoices} 
+                        choice={choice} 
+                        likeability={likeability} 
+                        title={scenarioTitle}
+                        history={history}
+                        cancel_num={cancel_num}
+                        SetChoice={setIsChoices}
+                    />
                </div>
                 ) : (
                     <div onClick={nextLine}>
