@@ -9,13 +9,11 @@ const Main = () => {
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
     const [choicesText, setChoicesText] = useState([]);
     const [isChoices, setIsChoices] = useState(false);
+    const [scenarioId, setScenarioId] = useState(null);
+    const [likeability, setLikeability] = useState(0);
+    const [scenarioTitle, setScenarioTitle] = useState("");
 
     const location = useLocation();
-    const { 
-        title: scenarioTitle, 
-        id: scenarioId,
-        Likeability:likeability 
-    } = location.state || {};
   
     useEffect(() => {
       fetch("/scenario.json")
@@ -28,9 +26,14 @@ const Main = () => {
     }, []);
 
     useEffect(() => {
+        setScenarioId(location.state?.scenarioId || null);
+        setLikeability(location.state?.Likeability || 0);
+        setScenarioTitle(location.state?.scenarioTitle || "");
         if (scenarioId && scenario.scenarios) {
-            const text = scenario.scenarios[scenarioId].scenes[0].contents[0].text;
-            const contents = scenario.scenarios[scenarioId].scenes[0].contents[0];
+            const index = scenario.scenarios.findIndex(scenarioItem => scenarioItem.title === scenarioTitle);
+            const scenarioIndex = scenario.scenarios[index].scenes.findIndex(scenarioItem => scenarioItem.sceneId === scenarioId);
+            const text = scenario.scenarios[index].scenes[scenarioIndex].text;
+            const contents = scenario.scenarios[index].scenes[scenarioIndex];
             const choices = contents.choices || [];
     
             const extractedChoices = choices.slice(0, 3).map(choice => choice.text);
@@ -66,12 +69,6 @@ const Main = () => {
             <p>Welcome to the main page of the Love Simulation game!</p>
             {error && <p style={{ color: "red" }}>Error: {error}</p>}
             {scenarioId && <p>Scenario ID: {scenarioId}</p>}
-            {scenarioId && scenario[scenarioId] && (
-                <div>
-                    <h2>Scenario Details</h2>
-                    <p>{scenario[scenarioId]}</p>
-                </div>
-            )}
             <div>
                 {isChoices ? (
                     <div>
@@ -83,7 +80,7 @@ const Main = () => {
                     <p>{textList[currentTextIndex]}</p>
                 )}
             </div>
-            <LoveMeter love={10} />
+            <LoveMeter love={likeability} />
         </div>
     );
   };
