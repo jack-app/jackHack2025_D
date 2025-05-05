@@ -4,12 +4,19 @@ import "./scenario_card.css";
 
 const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
   const navigate = useNavigate();
+  const history = {
+    likeability: [],
+    scenarioId: []
+  };
+  const cancel_num = 100;
   const handleClick = () => {
     navigate(`/main`, 
       {state: { 
         scenarioTitle:title, 
         scenarioId:1,
         Likeability: 50,
+        history: history,
+        cancel_num: cancel_num,
     }});
   };
   const difficultyFeature = "⭐️".repeat(difficulty) + "・".repeat(5 - difficulty);

@@ -19,7 +19,8 @@ const Main = () => {
     const [scenarioId, setScenarioId] = useState(null);
     const [likeability, setLikeability] = useState(0);
     const [scenarioTitle, setScenarioTitle] = useState("");
-
+    const [history, setHistory] = useState({ likeability: [], scenarioId: [] });
+    const [cancel_num, setCancelNum] = useState(0);
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -37,6 +38,13 @@ const Main = () => {
         setScenarioId(location.state?.scenarioId || null);
         setLikeability(location.state?.Likeability || 0);
         setScenarioTitle(location.state?.scenarioTitle || "");
+        setHistory(location.state?.history || null);
+        setCancelNum(location.state?.cancel_num || 0);
+        console.log(history);
+        if ((scenarioId != history.scenarioId[history.scenarioId.length - 1]) && scenarioId != null) {
+            history.likeability.push(likeability);
+            history.scenarioId.push(scenarioId);
+        }
         if (scenarioId && scenario.scenarios) {
             const index = scenario.scenarios.findIndex(scenarioItem => scenarioItem.title === scenarioTitle);
             if (index === -1) {
@@ -79,7 +87,9 @@ const Main = () => {
                 { 
                     scenarioId: nextId, 
                     Likeability: likeability, 
-                    scenarioTitle: scenarioTitle 
+                    scenarioTitle: scenarioTitle,
+                    history: history,
+                    cancel_num: cancel_num,
             }});
         }
         else{
@@ -94,11 +104,23 @@ const Main = () => {
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
             <div className="game-display">
-                <CancelButton className="cancelButton"/>
+                <CancelButton 
+                    scenarioId={scenarioId} 
+                    scenarioTitle={scenarioTitle}
+                    history={history}         
+                    cancel_num={cancel_num}
+                />
                 <MenuButton className="menuButton" />
                 <div className="scene-section">
                     <LoveMeter love={likeability} />
-                    <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
+                    <ChoiceButton 
+                        isChoice={isChoices} 
+                        choice={choice} 
+                        likeability={likeability} 
+                        title={scenarioTitle}
+                        history={history}
+                        cancel_num={cancel_num}
+                    />
                 </div>  
                 <div onClick={nextLine}>
                     <Character character={String(character)}/>
