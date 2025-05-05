@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 
 
 
-const ChoiceButton = ({ isChoice, choice, likeability, title, cancel_num, history}) => {
+const ChoiceButton = ({ isChoice, choice, likeability, title, cancel_num, history, SetChoice}) => {
 
     const navigate = useNavigate();
 
     const handleChoiceClick = (item) => {
+        SetChoice(false);
         navigate("/main", {
             state: {
                 scenarioId: item.nextId,
@@ -20,7 +21,7 @@ const ChoiceButton = ({ isChoice, choice, likeability, title, cancel_num, histor
 
     if (!isChoice) {
         console.log("isChoice is false, rendering empty div"); 
-        return <div className="choice-button"></div>;
+        return <div></div>;
     }
 
     return (
