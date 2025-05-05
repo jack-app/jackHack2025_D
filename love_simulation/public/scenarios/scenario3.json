@@ -1,0 +1,105 @@
+{
+  "sceneId":1,
+  "speaker": "美香",
+  "text":"今日は美香とディスティニーランドに行く日。\nもともと生徒会のメンバーで行く予定だったんだが、俺と美香以外キャンセルしたから二人きりになってしまった。",
+  "nextId":2                                   
+},
+{
+  "sceneId":2,
+  "speaker": "美香",
+  "text":"ディスティニーランド楽しみだね～\n最初はどこに行こう？",
+  "choices":[
+    {"text":"一番人気のポリー・ハッターでしょ！","likeability":-1,"nextId":3},
+    {"text":"やっぱり最初はミッケーハウスかな。","likeability":-2,"nextId":3},
+    {"text":"フィクションランドとアニメラルランドがあるよね、どっちがいい？","likeability":2,"nextId":4}
+  ]
+},
+{
+  "sceneId":3,
+  "speaker": "美香",
+  "text":"そうだね、そこに行こう。\n数時間後…",
+  "nextId":5
+},
+{
+  "sceneId":4,
+  "speaker": "美香",
+  "text":"フィクションランドに行きたい！\n数時間後…",
+  "nextId":5
+},
+{
+  "sceneId":5,
+  "speaker": "美香",
+  "text":"はー、楽しかったぁ。そろそろ何か食べない？それともまだ乗る？",
+  "choices":[
+    {"text":"何か食べに行こう","likeability":2,"nextId":6},
+    {"text":"多分今なら空いてる乗り物があるよね、それに乗りに行こう。","likeability":-2,"nextId":7},
+    {"text":"美香はどっちがいい？","likeability":0,"nextId":8}
+  ]
+},
+{
+  "sceneId":6,
+  "speaker": "美香",
+  "text":"やった！お腹空いてたんだぁ、おいしいもの食べよっ！",
+  "nextId":9   
+},
+{
+  "sceneId":7,
+  "speaker": "美香",
+  "text":"乗り物だけじゃなく、私のお腹も減ってるんですけどっ！\nまあそんなに乗りたいなら乗りに行こう＿＿",
+  "nextId":10
+},
+{
+  "sceneId":9,
+  "speaker": "美香",
+  "text":"私はお腹空いたから何か食べたいな。",
+  "nextId":9
+},
+{
+  "sceneId":9,
+  "speaker": "美香",
+  "text":"ふぅ、トナルトのサック！サック！スペシャルメニューおいしかったね！",
+  "choices":[
+      {"text":"テーマパークだからちょっと高かったけどね。","likeability":-3,"nextId":11},
+      {"text":"そうだね、おいしかった。","likeability":1,"nextId":12},
+      {"text":"他のメニューも美味しそうだったからまた食べに来たいね。","likeability":2,"nextId":13}
+  ]
+},
+{ 
+  "sceneId":11,
+  "speaker": "美香",
+  "text":"そこっ！そういうことを言わない！",
+  "nextId":14
+},
+{
+  "sceneId":12,
+  "speaker": "美香",
+  "text":"じゃあ次はあれに乗ろう？",
+  "nextId":14
+},
+{
+  "sceneId":13,
+  "speaker": "美香",
+  "text":"そうそう！他のも美味しそうだったよね～。\nあっ、今度はあれに乗ろうよ！",
+  "nextId":14
+},
+{
+  "sceneId":15,
+  "speaker": "美香",
+  "text":"数時間後…",
+  "nextId":16
+},
+{
+  "sceneId":16,
+  "speaker": "美香",
+  "text":"今日は楽しかった！また行こうね。",
+  "choices":[
+    {"text":"俺も楽しかった！また行こうね。","likeability":2,"nextId":17},
+    {"text":"今度はみんなで来よう。","likeability":1,"nextId":17},
+    {"text":"もうしばらくはいいかな。今度は別のところへ行こう。","likeability":-1,"nextId":17}
+    ]
+},
+{
+  "sceneId":17,
+  "speaker": "美香",
+  "text":"終"
+}

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const IsBackInfo = ({func}) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate('/', { replace: true });
+        navigate('/scenario_select', { replace: true });
     };
   
 

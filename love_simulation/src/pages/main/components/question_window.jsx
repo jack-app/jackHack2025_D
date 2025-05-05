@@ -4,8 +4,8 @@ const QuestionBox = ({line}) => {
       style={{
         fontFamily: "'Yomogi', sans-serif",
         textAlign: "center",
-        zIndex: 2,
-        margin: "1% 0 0 0",
+        zIndex: 1,
+        margin: "1% 20% 0 20%",
         height: "25%",
         position: "relative"
       }}

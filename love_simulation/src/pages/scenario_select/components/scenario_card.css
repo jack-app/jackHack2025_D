@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yomogi&display=swap');
 
 .scenario-card {
     display: flex;
@@ -29,7 +29,7 @@
     margin: 8px 0;
     font-size: 2rem;
     text-align: center;
-    font-family: "Darumadrop One";
+    font-family: "Yomogi";
 }
   
 .description-text {

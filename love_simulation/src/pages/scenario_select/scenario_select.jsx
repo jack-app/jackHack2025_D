@@ -9,13 +9,14 @@ const ScenarioSelect = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("/scenario.json")
+        fetch("/scenarios/scenarioList.json")
             .then(res => {
                 if (!res.ok) throw new Error("Failed to fetch scenario.json");
                 return res.json();
             })
             .then(json => setScenarios(json.scenarios || []))
             .catch(err => console.error(err));
+        console.log(scenarios);
     }, []);
 
     if (scenarios.length === 0) {
@@ -23,11 +24,11 @@ const ScenarioSelect = () => {
     }
 
     const handleLeftClick = () => {
-        setCurrentIndex((prevIndex) => prevIndex - 3);
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - 3, 0));
     };
 
     const handleRightClick = () => {
-        setCurrentIndex((prevIndex) => prevIndex + 3);
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + 3, scenarios.length - 3));
     };
 
     const isLeftDisabled = currentIndex === 0;
@@ -60,6 +61,8 @@ const ScenarioSelect = () => {
                     imagePath={scenario.image}
                     difficulty={scenario.difficulty}
                     description={scenario.description}
+                    id = {scenario.id}
+                    cancel_num={scenario.cancel_num}
                 />
             ))}
 

@@ -1,0 +1,36 @@
+{
+  "scenarios": [
+    {
+      "title": "水族館デート",
+      "image": "/scenarioImages/thumbnail_0.png",
+      "difficulty": 3,
+      "description": "彼女との水族館でのデートです．彼女からの熱が冷めないようにスマートにデートを終わらせましょう．",
+      "cancel_num": 5,
+      "id": 0
+    },  
+    {
+      "title": "テストシナリオ0",
+      "image": "/scenarioImages/thumbnail_0.png",
+      "difficulty": 3,
+      "description": "テストシナリオ0の説明文です．",
+      "cancel_num": 10,
+      "id": 1
+    },
+    {
+      "title": "テストシナリオ1",
+      "image": "/scenarioImages/thumbnail_1.png",
+      "difficulty": 2,
+      "description": "テストシナリオ1の説明文です．",
+      "cancel_num": 8,
+      "id": 2
+    },
+    {
+      "title":"テストシナリオ２",
+      "image": "/scenarioImages/blank.png",
+      "difficulty": 2,
+      "description": "テストシナリオ2の説明文です．",
+      "cancel_num": 15,
+      "id": 3
+    }
+    ]
+}
