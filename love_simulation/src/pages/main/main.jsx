@@ -6,6 +6,7 @@ import MenuButton from "./components/menu_button";
 import LineBox  from "./components/line_box";
 import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
+import IsBackInfo from "./components/isBack_info";
 import "./main.css"
 
 const Main = () => {
@@ -19,6 +20,7 @@ const Main = () => {
     const [scenarioId, setScenarioId] = useState(null);
     const [likeability, setLikeability] = useState(0);
     const [scenarioTitle, setScenarioTitle] = useState("");
+    const [isShowTitleInfo, setisShowTitleInfo] = useState(false);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -91,11 +93,24 @@ const Main = () => {
         setCharacter();
     };
 
+    const titleBackButton = () => {
+        if(isShowTitleInfo === false){
+            setisShowTitleInfo(true);
+        }
+    };
+
+    const titleBackFalse = () => {
+        if(isShowTitleInfo === true){
+            setisShowTitleInfo(false)
+        }
+    };
+
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
             <div className="game-display">
-                <CancelButton className="cancelButton"/>
-                <MenuButton className="menuButton" />
+                {isShowTitleInfo && <IsBackInfo func={titleBackFalse} />}
+                <button className="cancelButton"/>
+                <button onClick={titleBackButton} className="menuButton" />
                 <div className="scene-section">
                     <LoveMeter love={likeability} />
                     <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
