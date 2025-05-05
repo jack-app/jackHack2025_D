@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
+import CancelButton from "./components/cancel_button";
+import MenuButton from "./components/menu_button";
+import LineBox  from "./components/line_box";
+import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
+import "./main.css"
+
+let num = "hello";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [error, setError] = useState(null);
+    const [line, setNextLine] = useState(null);
+    const [character, setCharacter] = useState(null);
     const [textList, setTextList] = useState([]);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
     const [choice, setChoice] = useState([]);
@@ -71,25 +80,31 @@ const Main = () => {
         };
     }, [textList, currentTextIndex]);
 
+    const nextLine = () => {
+        setNextLine(num); // テスト用
+        console.log(num);
+    };
+
+    const nextCharacter = () => {
+        setCharacter();
+    };
+
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
-            <h1>Main Page</h1>
-            <p>Welcome to the main page of the Love Simulation game!</p>
-            {error && <p style={{ color: "red" }}>Error: {error}</p>}
-            {scenarioId && <p>Scenario ID: {scenarioId}</p>}
-            <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
-            <div>
-                {/* {isChoices ? (
-                    <div>
-                        {choicesText.map((choice, index) => (
-                            <button key={index} >{choice}</button>
-                        ))}
-                    </div>
-                ) : (
-                    <p>{textList[currentTextIndex]}</p>
-                )} */}
+            <div className="game-display">
+                <CancelButton className="cancelButton"/>
+                <MenuButton className="menuButton" />
+                <div className="scene-section">
+                    <LoveMeter love={10}/>
+                </div>  
+                <div onClick={nextLine}>
+                    <Character character={String(character)}/>
+                    <LineBox line={String(line)}/>
+                </div>
+                <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
+
+                <LoveMeter love={likeability} />
             </div>
-            <LoveMeter love={likeability} />
         </div>
     );
   };
