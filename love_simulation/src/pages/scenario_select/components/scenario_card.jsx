@@ -5,7 +5,12 @@ import "./scenario_card.css";
 const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate(`/main?scenarioTitle=${title}&scenarioId=1`, { replace: true });
+    navigate(`/main`, 
+      {state: { 
+        scenarioTitle:title, 
+        scenarioId:1,
+        Likeability: 50, // Assuming a default value for Likeability
+    }});
   };
   const difficultyFeature = "⭐️".repeat(difficulty) + "・".repeat(5 - difficulty);
 
