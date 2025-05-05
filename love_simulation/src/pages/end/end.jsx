@@ -1,15 +1,16 @@
 import TitleButton from "./components/title_button";
 import ResultProp from "../../types/result_prop";
-import React from 'react';
-
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const End = (result) => {
 
-  // // result must be ResultProp type
-  // if (!(result instanceof ResultProp)) {
-  //   throw new Error("Invalid result prop type. Expected ResultProp.");
-  // }
+  const location = useLocation();
+  const [likeability,setLikeability] = useState(0);
 
+  useEffect(() => {
+    setLikeability(location.state?.Likeability || 0);
+  }, [location.state]);
 
   return (
     <div
@@ -26,7 +27,7 @@ const End = (result) => {
     >
       <h1>End</h1>
       <p>Thank you for playing!</p>
-      {/* <p>Final point:{result.points}</p> */}
+      <p>{likeability}</p>
       <p>We hope you enjoyed the game!</p>
       <TitleButton />
     </div>

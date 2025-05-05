@@ -63,6 +63,14 @@ const Main = () => {
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === "Enter") {
+                if (choice.length === 0) { 
+                    navigate("/end", {
+                        state: {
+                            Likeability: likeability,
+                        },
+                    });
+                    return;
+                }
                 nextLine();
             }
         };
@@ -71,7 +79,7 @@ const Main = () => {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, []);
+    }, [choice, likeability, navigate]);
 
     const nextLine = () => {
         if(nextId){

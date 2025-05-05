@@ -10,7 +10,7 @@
             "sceneId": 1,
             "text": "こんにちは！今日はどこ行きたい？",
             "choices": [
-              { "text": "遊園地に行く", "likeability": 5,  "nextId": 2 },
+              { "text": "遊園地に行く",   "likeability": 5,  "nextId": 2 },
               { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
               { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
             ]
@@ -62,7 +62,76 @@
               { "text": "最近の趣味について話す",   "likeability": 4,  "nextId": 9 },
               { "text": "好きな映画について話す",   "likeability": 3,  "nextId": 10 }
             ]
-          }
+          },
+          {
+            "sceneId": 8,
+            "text": "お化け屋敷めっちゃ怖かった！ちょっと落ち着こう？",
+            "choices": [
+              { "text": "ベンチで休憩する", "likeability": 3, "nextId": 11 },
+              { "text": "もう一回別の乗り物に乗る", "likeability": 2, "nextId": 12 }
+            ]
+          },
+          {
+            "sceneId": 9,
+            "text": "へえ～そんな趣味があるんだ！もっと聞かせて！",
+            "choices": [
+              { "text": "具体的なエピソードを話す", "likeability": 4, "nextId": 13 },
+              { "text": "趣味のきっかけを話す", "likeability": 3, "nextId": 13 }
+            ]
+          },
+          {
+            "sceneId": 10,
+            "text": "映画いいね！どんなジャンルが好き？",
+            "choices": [
+              { "text": "ホラーが好き", "likeability": 2, "nextId": 14 },
+              { "text": "ラブコメが好き", "likeability": 4, "nextId": 14 }
+            ]
+          },
+          {
+            "sceneId": 11,
+            "text": "休憩できた～ありがとう．楽しかったね．",
+            "choices": [
+              { "text": "また一緒に来ようと誘う", "likeability": 5, "nextId": 15 },
+              { "text": "今日はそろそろ帰ろうと提案する", "likeability": 1, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 12,
+            "text": "まだまだ元気だね！次は何乗ろうか？",
+            "choices": [
+              { "text": "メリーゴーランド", "likeability": 2, "nextId": 11 },
+              { "text": "ジェットコースターもう一回！", "likeability": 1, "nextId": 4 }
+            ]
+          },
+          {
+            "sceneId": 13,
+            "text": "なるほど～その話面白いね！あなたってほんと多趣味だね．",
+            "choices": [
+              { "text": "もっと語る", "likeability": 3, "nextId": 15 },
+              { "text": "話を相手に振る", "likeability": 4, "nextId": 14 }
+            ]
+          },
+          {
+            "sceneId": 14,
+            "text": "わかる！私もそのジャンル好きかも！また今度一緒に観ようよ！",
+            "choices": [
+              { "text": "ぜひ！と答える", "likeability": 5, "nextId": 15 },
+              { "text": "ちょっと照れてごまかす", "likeability": 3, "nextId": 15 }
+            ]
+          },
+          {
+            "sceneId": 15,
+            "text": "今日はすごく楽しかった！また遊ぼうね！",
+            "choices": [
+              { "text": "うん！また誘うね！", "likeability": 5, "nextId": 16 },
+              { "text": "こちらこそありがとう！", "likeability": 4, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 16,
+            "text": "デートはここで終了です．好感度スコアを集計します．",
+            "choices": []
+          }          
         ]
       },
       {
