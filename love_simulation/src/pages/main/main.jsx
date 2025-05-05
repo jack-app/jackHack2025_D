@@ -4,7 +4,6 @@ import LoveMeter from "./components/love_meter";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
-    const [scenarioId, setScenarioId] = useState(null);
     const [error, setError] = useState(null);
     const [textList, setTextList] = useState([]);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
@@ -12,22 +11,21 @@ const Main = () => {
     const [isChoices, setIsChoices] = useState(false);
 
     const location = useLocation();
-
+    const { 
+        title: scenarioTitle, 
+        id: scenarioId,
+        Likeability:likeability 
+    } = location.state || {};
+  
     useEffect(() => {
-        const params = new URLSearchParams(location.search);
-        const id = params.get("scenarioId");
-        setScenarioId(id);
-
-        fetch("/scenario.json")
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch scenario.json");
-                }
-                return res.json();
-            })
-            .then(json => setScenario(json))
-            .catch(err => setError(err.message));
-    }, [location.search]);
+      fetch("/scenario.json")
+        .then(res => {
+          if (!res.ok) throw new Error("Failed to fetch scenario.json");
+          return res.json();
+        })
+        .then(setScenario)
+        .catch(err => setError(err.message));
+    }, []);
 
     useEffect(() => {
         if (scenarioId && scenario.scenarios) {
@@ -88,6 +86,6 @@ const Main = () => {
             <LoveMeter love={10} />
         </div>
     );
-};
+  };
 
-export default Main;
+  export default Main;
