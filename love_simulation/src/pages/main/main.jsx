@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
+import ChoiceButton from "./components/choice_button";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [error, setError] = useState(null);
     const [textList, setTextList] = useState([]);
     const [currentTextIndex, setCurrentTextIndex] = useState(0);
-    const [choicesText, setChoicesText] = useState([]);
+    const [choice, setChoice] = useState([]);
     const [isChoices, setIsChoices] = useState(false);
     const [scenarioId, setScenarioId] = useState(null);
     const [likeability, setLikeability] = useState(0);
@@ -23,7 +24,7 @@ const Main = () => {
         })
         .then(setScenario)
         .catch(err => setError(err.message));
-    }, []);
+    }, [location.state]);
 
     useEffect(() => {
         setScenarioId(location.state?.scenarioId || null);
@@ -31,13 +32,20 @@ const Main = () => {
         setScenarioTitle(location.state?.scenarioTitle || "");
         if (scenarioId && scenario.scenarios) {
             const index = scenario.scenarios.findIndex(scenarioItem => scenarioItem.title === scenarioTitle);
+            if (index === -1) {
+                setError("Scenario not found");
+                return;
+            }
             const scenarioIndex = scenario.scenarios[index].scenes.findIndex(scenarioItem => scenarioItem.sceneId === scenarioId);
+
+            if (scenarioIndex === -1) {
+                setError("Scene not found");
+                return;
+            }
             const text = scenario.scenarios[index].scenes[scenarioIndex].text;
             const contents = scenario.scenarios[index].scenes[scenarioIndex];
-            const choices = contents.choices || [];
-    
-            const extractedChoices = choices.slice(0, 3).map(choice => choice.text);
-            setChoicesText(extractedChoices);
+            const choice = contents.choices || [];
+            setChoice(choice);
     
             const splitText = text.split("\n");
             setTextList(splitText);
@@ -69,8 +77,9 @@ const Main = () => {
             <p>Welcome to the main page of the Love Simulation game!</p>
             {error && <p style={{ color: "red" }}>Error: {error}</p>}
             {scenarioId && <p>Scenario ID: {scenarioId}</p>}
+            <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
             <div>
-                {isChoices ? (
+                {/* {isChoices ? (
                     <div>
                         {choicesText.map((choice, index) => (
                             <button key={index} >{choice}</button>
@@ -78,7 +87,7 @@ const Main = () => {
                     </div>
                 ) : (
                     <p>{textList[currentTextIndex]}</p>
-                )}
+                )} */}
             </div>
             <LoveMeter love={likeability} />
         </div>
