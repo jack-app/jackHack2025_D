@@ -5,17 +5,28 @@ import React from 'react';
 
 const End = (result) => {
 
-  // result must be ResultProp type
-  if (!(result instanceof ResultProp)) {
-    throw new Error("Invalid result prop type. Expected ResultProp.");
-  }
+  // // result must be ResultProp type
+  // if (!(result instanceof ResultProp)) {
+  //   throw new Error("Invalid result prop type. Expected ResultProp.");
+  // }
 
 
   return (
-    <div className="end">
+    <div
+      className="end"
+      style={{
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh',
+        textAlign: 'center',
+      }}
+    >
       <h1>End</h1>
       <p>Thank you for playing!</p>
-      <p>Final point:{result.points}</p>
+      {/* <p>Final point:{result.points}</p> */}
       <p>We hope you enjoyed the game!</p>
       <TitleButton />
     </div>

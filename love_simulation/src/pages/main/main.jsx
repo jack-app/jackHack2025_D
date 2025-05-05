@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import LoveMeter from "./components/love_meter";
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
@@ -29,22 +30,25 @@ const Main = () => {
 
     useEffect(() => {
         if (scenarioId && scenario.scenarios) {
-            console.log("Scenario:", scenario.scenarios[scenarioId]);
+            console.log("id: ", scenarioId)
+            console.log("Scenario:", scenario["scenarios"][parseInt(scenarioId)]["title "]);
+            console.log("type: ", typeof (scenarioId))
         }
     }, [scenarioId, scenario]);
 
     return (
-        <div>
+        <div style={{ width: window.innerWidth, height: window.innerHeight }}>
             <h1>Main Page</h1>
             <p>Welcome to the main page of the Love Simulation game!</p>
             {error && <p style={{ color: "red" }}>Error: {error}</p>}
             {scenarioId && <p>Scenario ID: {scenarioId}</p>}
-            {scenarioId && scenario[scenarioId] && (
+            {scenarioId && scenario.scenarios && scenario.scenarios.length > 0 && scenario.scenarios[0].title && (
                 <div>
                     <h2>Scenario Details</h2>
-                    <p>{scenario[scenarioId]}</p>
+                    <p>{scenario.scenarios[0].title}</p>
                 </div>
             )}
+            <LoveMeter love={50} />
         </div>
     );
 };
