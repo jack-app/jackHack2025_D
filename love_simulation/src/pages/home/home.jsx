@@ -5,10 +5,9 @@ import "./home.css";
 const Home = () => {
     return (
         <div className="home">
-            <p id="title1">恋愛cancelシミュレーション</p><br/>
+            <p id="title1">恋愛cancelシミュレーション</p>
             <p id="title2">恋Can</p>
             <StartButton />
-            {/* <CreditButton /> */}
         </div>
     );
     }

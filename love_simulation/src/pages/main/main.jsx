@@ -83,6 +83,7 @@ const Main = () => {
 
     const nextLine = () => {
         if(nextId){
+            setIsChoices(false);
             navigate("/main", {state: 
                 { 
                     scenarioId: nextId, 
@@ -99,19 +100,57 @@ const Main = () => {
         setCharacter();
     };
 
+    const handleChoiceClick = (item) => {
+        setIsChoices(false);
+        navigate("/main", {
+            state: {
+                scenarioId: item.nextId,
+                Likeability: likeability + item.likeability,
+                scenarioTitle: scenarioTitle,
+            },
+        });
+    };
+
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
             <div className="game-display">
-                <CancelButton className="cancelButton"/>
+                <CancelButton className="cancelButton" />
                 <MenuButton className="menuButton" />
                 <div className="scene-section">
                     <LoveMeter love={likeability} />
-                    <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
-                </div>  
-                <div onClick={nextLine}>
-                    <Character character={String(character)}/>
-                    <LineBox line={String(line)}/>
                 </div>
+                {isChoices ? (
+                   <div
+                   style={{
+                       zIndex: 10,
+                       position: "absolute", 
+                       backgroundColor: "rgba(255, 255, 255, 0.8)",
+                       width: "100%",
+                       height: "30%",
+                       display: "flex",
+                       justifyContent: "center",
+                       alignItems: "center",
+                       bottom: 0,
+                   }}
+               >
+                    <div className="choice-button">
+                        {choice.map((item, index) => (
+                            <button
+                                key={index}
+                                className="choice-button-item"
+                                onClick={() => handleChoiceClick(item)}
+                            >
+                                {item.text || "No Text"}
+                            </button>
+                        ))}
+                    </div>
+               </div>
+                ) : (
+                    <div onClick={nextLine}>
+                        <Character character={String(character)} />
+                        <LineBox line={String(line)} />
+                    </div>
+                )}
             </div>
         </div>
     );
