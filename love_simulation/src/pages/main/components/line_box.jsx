@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
+import Character from './character';
 
-const LineBox = ({ line }) => {
+const LineBox = ({ line, speaker }) => {
     const [displayLine, setDisplayLine] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -40,13 +41,12 @@ const LineBox = ({ line }) => {
     }, [line]); // 依存配列を `line` のみに変更
 
     return (
-        <>
-            <div className="lineBox">
-                <div style={{ padding: "30px 16px", fontSize: "40px", color: "white" }}>
-                    {displayLine}
-                </div>
+        <div className="lineBox">
+            <Character speaker={speaker}/>
+            <div className="line">
+                {displayLine}
             </div>
-        </>
+        </div>
     );
 };
 

@@ -114,8 +114,7 @@ const Main = () => {
                     <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
                 </div>  
                 <div onClick={nextLine}>
-                    <Character speaker={String(speaker)}/>
-                    <LineBox line={String(line)}/>
+                    <LineBox line={String(line)} speaker={speaker}/>
                 </div>
             </div>
         </div>
