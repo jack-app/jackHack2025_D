@@ -13,7 +13,7 @@ const Main = () => {
     const [scenario, setScenario] = useState({});
     const [error, setError] = useState(null);
     const [line, setNextLine] = useState(null);
-    const [character, setCharacter] = useState(null);
+    const [speaker, setSpeaker] = useState(null);
     const [choice, setChoice] = useState([]);
     const [nextId, setNextId] = useState(null);
     const [isChoices, setIsChoices] = useState(false);
@@ -56,8 +56,10 @@ const Main = () => {
             const contents = scenario.scenarios[index].scenes[scenarioIndex];
             const choice = contents.choices || [];
             const nextId = contents.nextId || null;
+            const speaker = scenario.scenarios[index].scenes[scenarioIndex].speaker;
             setChoice(choice);
-            setNextLine(text)
+            setNextLine(text);
+            setSpeaker(speaker)
             setNextId(nextId);
         }
     }, [scenarioId, scenario]);
@@ -89,10 +91,6 @@ const Main = () => {
         }
     };
 
-    const nextCharacter = () => {
-        setCharacter();
-    };
-
     const titleBackButton = () => {
         if(isShowTitleInfo === false){
             setisShowTitleInfo(true);
@@ -116,7 +114,7 @@ const Main = () => {
                     <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
                 </div>  
                 <div onClick={nextLine}>
-                    <Character character={String(character)}/>
+                    <Character speaker={String(speaker)}/>
                     <LineBox line={String(line)}/>
                 </div>
             </div>
