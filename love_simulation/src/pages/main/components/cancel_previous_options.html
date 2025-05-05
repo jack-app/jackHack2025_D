@@ -3,7 +3,7 @@
 
     <head>
         <meta charset="UTF-8" />
-        <title>戻る確認画面</title>
+        <title>キャンセル確認画面</title>
         <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
         
         <style>            
@@ -18,38 +18,51 @@
                 width: 800px;
             }
 
-            /* 戻りますか？のメッセージ　*/
+            /* キャンセルしますか？のメッセージ　*/
             #message {
                 background-color: #ffe1ec;
                 background: linear-gradient(to right, #ffe7f3, #ffbfde);
-                font-size: 31px;
+                font-size: 26px;
                 color: hwb(290 2% 81%);
                 border-style: dotted;
                 border-color: palevioletred;
                 padding: 100px;
-                line-height: 1.8;
+                line-height: 1.6;
                 border-radius: 30px; /* 角を丸くする */
                 box-shadow: 0 8px 16px rgba(0,0,0,0.1);
                 text-align: center;
                 height: 200px;
-                width: 300px;
+                width: 300px; 
             }
             
+            /* メッセージの位置をちょっと上に */
+            .text {
+                position: relative;
+                top: -50px;
+            }
+
             /* 上下にゆらゆらさせる */
             @keyframes floaty {
-            0%   { transform: translateY(0); }
-            50%  { transform: translateY(-7px); }
-            100% { transform: translateY(0); }
+                0%   { transform: translateY(0); }
+                50%  { transform: translateY(-7px); }
+                100% { transform: translateY(0); }
             }
 
             .float-text {
-            display: inline-block;
-            animation: floaty 1.2s ease-in-out infinite;
+                display: inline-block;
+                animation: floaty 1.2s ease-in-out infinite;
+            }
+
+            /* 「キャンセル」の強調 */
+            .highlight {
+                color: red;
+                font-size: 33px;
+                font-weight: bold;
             }
 
             /* 2つのボタンを制御　*/
             #button-container {
-                margin-top: 80px;
+                margin-top: -10px;
                 display: flex; /* ここにもFlexbox */
                 justify-content: space-between;
                 gap: 70px; /* ボタン間の間隔*/
@@ -80,12 +93,41 @@
 
     <body>
         <div id="box">
+
+            <!--ここから、-->
+
             <div id="message">
-                <span class="float-text">シナリオ選択画面に</span><br><span class="float-text">戻りますか？</span>
+            <span class="text">
+
+                <span class="float-text">
+                    一つ前の選択肢まで
+                </span>
+                
+                <br>
+                
+                <span class="float-text"><span class="highlight">
+                    キャンセル
+                </span></span>
+
+                <br>
+
+                <span class="float-text">
+                    しますか？
+                </span>
+                
+                <br><br>
+
+                キャンセル回数　残りx回
+            
+            </span>
+                
+            <!--ここまでメッセージ-->
+            
                 <div id="button-container">
                 <button>いいえ</button>
                 <button>はい</button>
                 </div>
+
             </div>
         </div>
     </body>

@@ -1,7 +1,9 @@
 import { useNavigate } from "react-router-dom";
 
 
-const ChoiceButton = ({ isChoice, choice, likeability, title }) => {
+
+const ChoiceButton = ({ isChoice, choice, likeability, title, cancel_num, history}) => {
+
     const navigate = useNavigate();
 
     const handleChoiceClick = (item) => {
@@ -10,6 +12,8 @@ const ChoiceButton = ({ isChoice, choice, likeability, title }) => {
                 scenarioId: item.nextId,
                 Likeability: likeability + item.likeability,
                 scenarioTitle: title,
+                history: history,
+                cancel_num: cancel_num,
             },
         });
     };

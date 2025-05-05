@@ -6,19 +6,23 @@ import MenuButton from "./components/menu_button";
 import LineBox  from "./components/line_box";
 import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
+import IsBackInfo from "./components/isBack_info";
 import "./main.css"
 
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [error, setError] = useState(null);
     const [line, setNextLine] = useState(null);
-    const [character, setCharacter] = useState(null);
+    const [speaker, setSpeaker] = useState(null);
     const [choice, setChoice] = useState([]);
     const [nextId, setNextId] = useState(null);
     const [isChoices, setIsChoices] = useState(false);
     const [scenarioId, setScenarioId] = useState(null);
     const [likeability, setLikeability] = useState(0);
     const [scenarioTitle, setScenarioTitle] = useState("");
+    const [history, setHistory] = useState({ likeability: [], scenarioId: [] });
+    const [cancel_num, setCancelNum] = useState(0);
+    const [isShowTitleInfo, setisShowTitleInfo] = useState(false);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -37,6 +41,13 @@ const Main = () => {
         setScenarioId(location.state?.scenarioId || null);
         setLikeability(location.state?.Likeability || 0);
         setScenarioTitle(location.state?.scenarioTitle || "");
+        setHistory(location.state?.history || null);
+        setCancelNum(location.state?.cancel_num || 0);
+        console.log(history);
+        if ((scenarioId != history.scenarioId[history.scenarioId.length - 1]) && scenarioId != null) {
+            history.likeability.push(likeability);
+            history.scenarioId.push(scenarioId);
+        }
         if (scenarioId && scenario.scenarios) {
             const index = scenario.scenarios.findIndex(scenarioItem => scenarioItem.title === scenarioTitle);
             if (index === -1) {
@@ -54,8 +65,10 @@ const Main = () => {
             const contents = scenario.scenarios[index].scenes[scenarioIndex];
             const choice = contents.choices || [];
             const nextId = contents.nextId || null;
+            const speaker = scenario.scenarios[index].scenes[scenarioIndex].speaker;
             setChoice(choice);
-            setNextLine(text)
+            setNextLine(text);
+            setSpeaker(speaker)
             setNextId(nextId);
         }
     }, [scenarioId, scenario]);
@@ -88,7 +101,9 @@ const Main = () => {
                 { 
                     scenarioId: nextId, 
                     Likeability: likeability, 
-                    scenarioTitle: scenarioTitle 
+                    scenarioTitle: scenarioTitle,
+                    history: history,
+                    cancel_num: cancel_num,
             }});
         }
         else{
@@ -96,8 +111,16 @@ const Main = () => {
         }
     };
 
-    const nextCharacter = () => {
-        setCharacter();
+    const titleBackButton = () => {
+        if(isShowTitleInfo === false){
+            setisShowTitleInfo(true);
+        }
+    };
+
+    const titleBackFalse = () => {
+        if(isShowTitleInfo === true){
+            setisShowTitleInfo(false)
+        }
     };
 
     const handleChoiceClick = (item) => {
@@ -114,10 +137,30 @@ const Main = () => {
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
             <div className="game-display">
-                <CancelButton className="cancelButton" />
+                <CancelButton 
+                    scenarioId={scenarioId} 
+                    scenarioTitle={scenarioTitle}
+                    history={history}         
+                    cancel_num={cancel_num}
+                />
                 <MenuButton className="menuButton" />
+                {isShowTitleInfo && <IsBackInfo func={titleBackFalse} />}
+                <button className="cancelButton"/>
+                <button onClick={titleBackButton} className="menuButton" />
                 <div className="scene-section">
                     <LoveMeter love={likeability} />
+                    <ChoiceButton 
+                        isChoice={isChoices} 
+                        choice={choice} 
+                        likeability={likeability} 
+                        title={scenarioTitle}
+                        history={history}
+                        cancel_num={cancel_num}
+                    />
+                </div>  
+                <div onClick={nextLine}>
+                    <Character speaker={String(speaker)}/>
+                    <LineBox line={String(line)}/>
                 </div>
                 {isChoices ? (
                    <div
