@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [scenarioId, setScenarioId] = useState(null);
+    const [scenarioTitle, setScenarioTitle] = useState(null);
     const [error, setError] = useState(null);
 
     const location = useLocation();
@@ -11,7 +12,9 @@ const Main = () => {
     useEffect(() => {
         const params = new URLSearchParams(location.search);
         const id = params.get("scenarioId");
+        const title = params.get("scenarioTitle");
         setScenarioId(id);
+        setScenarioTitle(title);
 
         fetch("/scenario.json")
             .then(res => {
