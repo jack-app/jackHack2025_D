@@ -96,6 +96,7 @@ const Main = () => {
 
     const nextLine = () => {
         if(nextId){
+            setIsChoices(false);
             navigate("/main", {state: 
                 { 
                     scenarioId: nextId, 
@@ -120,6 +121,17 @@ const Main = () => {
         if(isShowTitleInfo === true){
             setisShowTitleInfo(false)
         }
+    };
+
+    const handleChoiceClick = (item) => {
+        setIsChoices(false);
+        navigate("/main", {
+            state: {
+                scenarioId: item.nextId,
+                Likeability: likeability + item.likeability,
+                scenarioTitle: scenarioTitle,
+            },
+        });
     };
 
     return (
@@ -150,6 +162,38 @@ const Main = () => {
                     <Character speaker={String(speaker)}/>
                     <LineBox line={String(line)}/>
                 </div>
+                {isChoices ? (
+                   <div
+                   style={{
+                       zIndex: 10,
+                       position: "absolute", 
+                       backgroundColor: "rgba(255, 255, 255, 0.8)",
+                       width: "100%",
+                       height: "30%",
+                       display: "flex",
+                       justifyContent: "center",
+                       alignItems: "center",
+                       bottom: 0,
+                   }}
+               >
+                    <div className="choice-button">
+                        {choice.map((item, index) => (
+                            <button
+                                key={index}
+                                className="choice-button-item"
+                                onClick={() => handleChoiceClick(item)}
+                            >
+                                {item.text || "No Text"}
+                            </button>
+                        ))}
+                    </div>
+               </div>
+                ) : (
+                    <div onClick={nextLine}>
+                        <Character character={String(character)} />
+                        <LineBox line={String(line)} />
+                    </div>
+                )}
             </div>
         </div>
     );
