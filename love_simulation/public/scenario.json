@@ -168,11 +168,11 @@
             "contents": [
               {
                 "id": 1,
-                "text": "こんにちは！今日はどこ行きたい？",
+                "text": "こんにちは！久しぶりだね！！\n今日はどこ行きたい？",
                 "choices": [
-                  { "text": "遊園地に行く", "likeability": 5,  "nextId": 2 },
-                  { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
-                  { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
+                  { "text": "遊園地に行く", "likeability": 20,  "nextId": 2 },
+                  { "text": "カフェに行く",   "likeability": 30,  "nextId": 3 },
+                  { "text": "家に帰る",       "likeability": -20, "nextId": 16 }
                 ]
               },
               {

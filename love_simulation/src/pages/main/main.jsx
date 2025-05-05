@@ -6,6 +6,10 @@ const Main = () => {
     const [scenario, setScenario] = useState({});
     const [scenarioId, setScenarioId] = useState(null);
     const [error, setError] = useState(null);
+    const [textList, setTextList] = useState([]);
+    const [currentTextIndex, setCurrentTextIndex] = useState(0);
+    const [choicesText, setChoicesText] = useState([]);
+    const [isChoices, setIsChoices] = useState(false);
 
     const location = useLocation();
 
@@ -27,9 +31,36 @@ const Main = () => {
 
     useEffect(() => {
         if (scenarioId && scenario.scenarios) {
-            console.log("Scenario:", scenario.scenarios[scenarioId]);
+            const text = scenario.scenarios[scenarioId].scenes[0].contents[0].text;
+            const contents = scenario.scenarios[scenarioId].scenes[0].contents[0];
+            const choices = contents.choices || [];
+    
+            const extractedChoices = choices.slice(0, 3).map(choice => choice.text);
+            setChoicesText(extractedChoices);
+    
+            const splitText = text.split("\n");
+            setTextList(splitText);
         }
     }, [scenarioId, scenario]);
+    
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === "Enter") {
+                if (currentTextIndex === textList.length - 1) {
+                    setIsChoices(true);
+                    return;
+                }
+                setCurrentTextIndex((prevIndex) => {
+                    return prevIndex < textList.length - 1 ? prevIndex + 1 : prevIndex;
+                });
+            }
+        };
+    
+        window.addEventListener("keydown", handleKeyDown);
+        return () => {
+            window.removeEventListener("keydown", handleKeyDown);
+        };
+    }, [textList, currentTextIndex]);
 
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight }}>
@@ -43,7 +74,18 @@ const Main = () => {
                     <p>{scenario[scenarioId]}</p>
                 </div>
             )}
-            <LoveMeter love={50} />
+            <div>
+                {isChoices ? (
+                    <div>
+                        {choicesText.map((choice, index) => (
+                            <button key={index} >{choice}</button>
+                        ))}
+                    </div>
+                ) : (
+                    <p>{textList[currentTextIndex]}</p>
+                )}
+            </div>
+            <LoveMeter love={10} />
         </div>
     );
 };
