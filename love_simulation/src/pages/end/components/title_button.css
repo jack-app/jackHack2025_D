@@ -1,0 +1,17 @@
+.titlebutton{
+        background-color: rgb(236, 141, 222);
+        border: 4mm ridge rgba(211, 220, 50, 0.6);
+        border-radius: 20px;
+        border-color: deeppink;
+        width: 25vw;
+        height: 10vw;
+        color: white;
+        padding: 15px;
+        text-align: center;
+        text-shadow: 0 0 3px pink, 0 0 6px deeppink;
+        display: inline-block;
+        font-size: 36px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+}

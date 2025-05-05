@@ -1,13 +1,14 @@
 import StartButton from "./components/start_button";
 import CreditButton from "./components/credit_button";
+import "./home.css";
 
 const Home = () => {
     return (
         <div className="home">
-            <h1 className="home-title">Love Simulation</h1>
-            <p className="home-description">A love simulation game.</p>
+            <p id="title1">恋愛cancelシミュレーション</p><br/>
+            <p id="title2">恋Can</p>
             <StartButton />
-            <CreditButton />
+            {/* <CreditButton /> */}
         </div>
     );
     }
