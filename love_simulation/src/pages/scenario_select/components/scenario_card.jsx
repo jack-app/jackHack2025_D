@@ -9,12 +9,12 @@ const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
       {state: { 
         scenarioTitle:title, 
         scenarioId:1,
-        Likeability: 50, // Assuming a default value for Likeability
+        Likeability: 50,
     }});
   };
   const difficultyFeature = "⭐️".repeat(difficulty) + "・".repeat(5 - difficulty);
-
   return (
+    
     <div className="scenario-card" onClick={handleClick}>
       <p className="card-text">シナリオタイトル：<br/>{title}</p>
       {imagePath && (
@@ -22,6 +22,7 @@ const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
           src={imagePath}
           alt={`${title} thumbnail`}
           className="scenario-image"
+          style={{ border:"1px solid black", borderRadius: "10px" }}
         />
       )}
       <p className="card-text">難易度：{difficultyFeature}</p>

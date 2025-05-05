@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
 import CancelButton from "./components/cancel_button";
 import MenuButton from "./components/menu_button";
@@ -9,16 +9,13 @@ import ChoiceButton from "./components/choice_button";
 import IsBackInfo from "./components/isBack_info";
 import "./main.css"
 
-let num = "hello";
-
 const Main = () => {
     const [scenario, setScenario] = useState({});
     const [error, setError] = useState(null);
     const [line, setNextLine] = useState(null);
     const [character, setCharacter] = useState(null);
-    const [textList, setTextList] = useState([]);
-    const [currentTextIndex, setCurrentTextIndex] = useState(0);
     const [choice, setChoice] = useState([]);
+    const [nextId, setNextId] = useState(null);
     const [isChoices, setIsChoices] = useState(false);
     const [scenarioId, setScenarioId] = useState(null);
     const [likeability, setLikeability] = useState(0);
@@ -26,6 +23,7 @@ const Main = () => {
     const [isShowTitleInfo, setisShowTitleInfo] = useState(false);
 
     const location = useLocation();
+    const navigate = useNavigate();
   
     useEffect(() => {
       fetch("/scenario.json")
@@ -53,26 +51,21 @@ const Main = () => {
                 setError("Scene not found");
                 return;
             }
+
             const text = scenario.scenarios[index].scenes[scenarioIndex].text;
             const contents = scenario.scenarios[index].scenes[scenarioIndex];
             const choice = contents.choices || [];
+            const nextId = contents.nextId || null;
             setChoice(choice);
-    
-            const splitText = text.split("\n");
-            setTextList(splitText);
+            setNextLine(text)
+            setNextId(nextId);
         }
     }, [scenarioId, scenario]);
     
     useEffect(() => {
         const handleKeyDown = (event) => {
             if (event.key === "Enter") {
-                if (currentTextIndex === textList.length - 1) {
-                    setIsChoices(true);
-                    return;
-                }
-                setCurrentTextIndex((prevIndex) => {
-                    return prevIndex < textList.length - 1 ? prevIndex + 1 : prevIndex;
-                });
+                nextLine();
             }
         };
     
@@ -80,11 +73,20 @@ const Main = () => {
         return () => {
             window.removeEventListener("keydown", handleKeyDown);
         };
-    }, [textList, currentTextIndex]);
+    }, []);
 
     const nextLine = () => {
-        setNextLine(num); // テスト用
-        console.log(num);
+        if(nextId){
+            navigate("/main", {state: 
+                { 
+                    scenarioId: nextId, 
+                    Likeability: likeability, 
+                    scenarioTitle: scenarioTitle 
+            }});
+        }
+        else{
+            setIsChoices(true);
+        }
     };
 
     const nextCharacter = () => {
@@ -110,13 +112,13 @@ const Main = () => {
                 <button className="cancelButton"/>
                 <button onClick={titleBackButton} className="menuButton" />
                 <div className="scene-section">
-                    <LoveMeter love={10}/>
+                    <LoveMeter love={likeability} />
+                    <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
                 </div>  
                 <div onClick={nextLine}>
                     <Character character={String(character)}/>
                     <LineBox line={String(line)}/>
                 </div>
-                <ChoiceButton isChoice={isChoices} choice={choice} likeability={likeability} title={scenarioTitle} />
             </div>
         </div>
     );

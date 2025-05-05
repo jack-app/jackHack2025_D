@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Darumadrop+One&display=swap');
+
 .scenario-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #ddd;
+    background-color: #ff95f9;
     border: 2px solid #aaa;
     border-radius: 10%;
     padding: 10px;
-    width: 25%;
-    height: 600px;
+    width: 20%;
+    height: 500px;
 }
   
 .scenario-image {
@@ -19,6 +21,7 @@
     margin: 8px 0;
     font-size: 2rem;
     text-align: center;
+    font-family: "Darumadrop One";
 }
   
 .description-text {
