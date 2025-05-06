@@ -2,21 +2,15 @@ import PropTypes from "prop-types";
 import { useNavigate } from 'react-router-dom';
 import "./scenario_card.css";
 
-const ScenarioCard = ({ title, imagePath, difficulty, description }) => {
+const ScenarioCard = ({ title, imagePath, difficulty, description, id, cancel_num }) => {
   const navigate = useNavigate();
-  const history = {
-    likeability: [],
-    scenarioId: []
-  };
-  const cancel_num = 100;
   const handleClick = () => {
     navigate(`/main`, 
       {state: { 
-        scenarioTitle:title, 
-        scenarioId:1,
+        Id:id, 
+        sceneId:1,
         Likeability: 50,
-        history: history,
-        cancel_num: cancel_num,
+        cancel_num: cancel_num
     }});
   };
   const difficultyFeature = "⭐️".repeat(difficulty) + "・".repeat(5 - difficulty);

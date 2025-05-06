@@ -3,22 +3,53 @@
     height: 100%;
 }
 
-.cancelButton {
-    position: fixed;
-    z-index: 1;
-    background-color: red;
-    bottom: 35%;
-    right: 8%;
-    padding: 10px 20px;
+.cancelBox {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    top: 90px;
+    right: 20px;
 }
+
+.cancel_num {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin:0;
+}
+
+.cancelButton {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-color: rgb(210, 75, 75);
+    font-weight: bold;
+    width: 75px;
+    padding: 20px 0px;
+    margin: 0;
+}
+.cancelButton:hover {
+    cursor: pointer;
+    background-color: rgb(222, 119, 119);
+}
+
 
 .menuButton {
     position: fixed;
     z-index: 1;
-    background-color: aqua;
+    text-align: center;
+    background-color: rgb(54, 162, 198);
+    font-weight: bold;
+    width: 75px;
     top: 20px;
     right: 20px;
-    padding: 10px 20px;
+    padding: 20px 0px;
+}
+
+.menuButton:hover {
+    cursor:pointer;
+    background-color: rgb(101, 185, 213);
 }
 
 .scene-section {
@@ -80,6 +111,7 @@
 }
 
 .love-meter {
+    z-index: 2;
     user-select: none;
     margin-top: 48px;
     margin-left: 32px;
@@ -88,7 +120,7 @@
 .isbackTitle {
     user-select: none;
     position: fixed;
-    z-index: 10;
+    z-index: 2;
     background-color: rgba(205, 239, 250, 0.8);
     display: flex;
     justify-content: center;
@@ -137,4 +169,23 @@
 
 .button-container button:hover {
     background-color: hotpink;
+}
+
+.choice-button-item {
+    width: 100%;
+    height: 100%;
+    background-color: #191970;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease; 
+}
+
+.choice-button-item:hover {
+    background-color: rgba(119, 119, 170, 1);
 }

@@ -1,19 +1,22 @@
 import { useEffect, useState } from "react";
 import ScenarioCard from "./components/scenario_card";
+import { useNavigate } from 'react-router-dom';
 import "./scenario_select.css";
 
 const ScenarioSelect = () => {
     const [scenarios, setScenarios] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch("/scenario.json")
+        fetch("/scenarios/scenarioList.json")
             .then(res => {
                 if (!res.ok) throw new Error("Failed to fetch scenario.json");
                 return res.json();
             })
             .then(json => setScenarios(json.scenarios || []))
             .catch(err => console.error(err));
+        console.log(scenarios);
     }, []);
 
     if (scenarios.length === 0) {
@@ -21,19 +24,24 @@ const ScenarioSelect = () => {
     }
 
     const handleLeftClick = () => {
-        setCurrentIndex((prevIndex) => prevIndex - 3);
+        setCurrentIndex((prevIndex) => Math.max(prevIndex - 3, 0));
     };
 
     const handleRightClick = () => {
-        setCurrentIndex((prevIndex) => prevIndex + 3);
+        setCurrentIndex((prevIndex) => Math.min(prevIndex + 3, scenarios.length - 3));
     };
 
     const isLeftDisabled = currentIndex === 0;
     const isRightDisabled = currentIndex >= scenarios.length - 3;
 
     return (
-        <div className="scenario_select">
-            {/* 左ボタン */}
+        <>
+            <div className="header">
+                <div className="backButton" onClick={() => navigate(`/`)} />
+                <p className="select_title"> 遊びたいシナリオを選択してください </p>
+                <div className="dummy" />
+            </div>
+            <div className="scenario_select">
             <div
                 style={{
                     width: "50px",
@@ -53,6 +61,8 @@ const ScenarioSelect = () => {
                     imagePath={scenario.image}
                     difficulty={scenario.difficulty}
                     description={scenario.description}
+                    id = {scenario.id}
+                    cancel_num={scenario.cancel_num}
                 />
             ))}
 
@@ -67,7 +77,8 @@ const ScenarioSelect = () => {
                 }}
                 onClick={!isRightDisabled ? handleRightClick : undefined}
             />
-        </div>
+            </div>
+        </>
     );
 };
 
