@@ -3,11 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
 import CancelButton from "./components/cancel_button";
 import LineBox  from "./components/line_box";
-import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
 import IsBackInfo from "./components/isBack_info";
-import "./main.css"
 import QuestionBox from "./components/question_window";
+import "./main.css"
 
 const Main = () => {
     const [sceneId, setSceneId] = useState(null);
@@ -208,8 +207,7 @@ const Main = () => {
                     </div>
                 ) : (
                     <div onClick={nextLine}>
-                        <Character speaker={speaker} />
-                        <LineBox line={lines[currentLineIndex]} />
+                        <LineBox line={lines[currentLineIndex]} speaker={speaker} />
                     </div>
                 )}
             </div>
