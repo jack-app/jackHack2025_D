@@ -16,7 +16,8 @@ const Credit = () => {
             <p>Story Telling by:ちご, ノセ, ビタミン21, yke</p>
             <p>Senior 恋愛 engineer:ピスラ</p>
             <p>Super 恋愛 adviser:ピスラ</p>
-            <p>Director: ピスラ</p>
+            <p>General 恋愛 Director:ピスラ</p>
+            <p>Cheif 恋愛 Officer:ピスラ</p>
             <p>Special thanks to: ChatGPT</p>
             <p>Version: 1.0.0</p>
             <p>Copyright © 2025 All rights reserved.</p>
