@@ -29,8 +29,8 @@
     },
     {
       "title":"ディスティニー",
-      "image": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
-      "bgimage": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
+      "image": "/scenarioImages/amusement-park1.jpg",
+      "bgimage": "/scenarioImages/amusement-park1.jpg",
       "difficulty": 2,
       "description": "遊園地でのデート．",
       "cancel_num": 15,
