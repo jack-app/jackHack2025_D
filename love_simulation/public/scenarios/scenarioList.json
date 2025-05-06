@@ -28,10 +28,11 @@
       "id": 2
     },
     {
-      "title":"テストシナリオ２",
-      "image": "/scenarioImages/blank.png",
+      "title":"遠距離彼女と初デート",
+      "image": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
+      "bgimage": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
       "difficulty": 2,
-      "description": "テストシナリオ2の説明文です．",
+      "description": "SNSで知り合った遠距離恋愛中の彼女との初デート。彼女の期待に応えられるよう、あなたはどんな服装で出かける",
       "cancel_num": 15,
       "id": 3
     },
