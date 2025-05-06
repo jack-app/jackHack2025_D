@@ -21,6 +21,7 @@ const Main = () => {
     const [continueId, setContinueId] = useState(null);
     const [history, setHistory] = useState([]);
     const [isGameOver, setIsGameOver] = useState(false);
+    const [branch, setBranch] = useState([]);
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -57,6 +58,7 @@ const Main = () => {
                     // nextId／continue をセット
                     setNextId(scene.nextId ?? null);
                     setContinueId(scene.continue ?? null);
+                    setBranch(scene.branch ?? null);
                 }
             } catch (err) {
                 console.error(err);
@@ -118,6 +120,27 @@ const Main = () => {
                     cancel_num: location.state.cancel_num
                 }
             });
+        }else if (branch != null){
+            setIsChoice(false);
+            if (likeability > branch.likeability){
+                navigate("/main", {
+                    state: {
+                        Id: location.state?.Id,
+                        sceneId: branch.upperId,
+                        Likeability: likeability,
+                        cancel_num: location.state.cancel_num
+                    },
+                });
+            }else{
+                navigate("/main", {
+                    state: {
+                        Id: location.state?.Id,
+                        sceneId: branch.lowerId,
+                        Likeability: likeability,
+                        cancel_num: location.state.cancel_num
+                    },
+                });
+            }
         }else if (choices.length === 0) {
             navigate("/end", {
                 state: {
