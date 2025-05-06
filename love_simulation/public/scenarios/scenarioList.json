@@ -46,8 +46,10 @@
     },
     {
       "title":"お家",
-      "image":"",
+      "image":"/scenario4_images/20250505_115415000_iOS.jpg",
       "description":"Panzer vor",
+      "bgimage":"scenario4_images/outi.jpg",
+      "difficulty":3,
       "cancel_num":3,
       "id": 4
     }
