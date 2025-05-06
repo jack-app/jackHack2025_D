@@ -22,6 +22,7 @@ const Main = () => {
     const [history, setHistory] = useState([]);
     const [isGameOver, setIsGameOver] = useState(false);
     const [branch, setBranch] = useState([]);
+    const [isTextComplete, setIsTextComplete] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
   
@@ -102,6 +103,8 @@ const Main = () => {
     }, [choices, likeability, navigate, nextId, lines, currentLineIndex]);
 
     const nextLine = () => {
+        if (!isTextComplete) return;
+
         if (isGameOver) {
             navigate("/end", { state: { id: location.state.Id, Likeability: likeability, cancel_num: location.state?.cancel_num } });
             return;
@@ -248,7 +251,11 @@ const Main = () => {
                     </div>
                 ) : (
                     <div onClick={nextLine}>
-                        <LineBox line={lines[currentLineIndex]} speaker={speaker} />
+                        <LineBox 
+                            line={lines[currentLineIndex]} 
+                            speaker={speaker} 
+                            onComplete={setIsTextComplete} 
+                        />
                     </div>
                 )}
             </div>
