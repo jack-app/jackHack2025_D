@@ -7,9 +7,11 @@ const CreditButton = () => {
     navigate('/credit', { replace: true });
   }
   return (
-    <button className="credit-button" onClick={handleClick}>
-      Credit
-    </button>
+    <div className="creditButton">
+      <button id="creditButton" onClick={handleClick}>
+        Credit
+      </button>
+    </div>
   );
 }
 
