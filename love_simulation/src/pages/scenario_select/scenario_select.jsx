@@ -37,7 +37,7 @@ const ScenarioSelect = () => {
     return (
         <div style={{ width: window.innerWidth, height: window.innerHeight, userSelect: "none" }}>
             <div className="header">
-                <div className="backButton" onClick={() => navigate(`/`)} />
+                <span className="dli-overthere-left" onClick={() => navigate(`/`)} />
                 <p className="select_title"> 遊びたいシナリオを選択してください </p>
                 <div className="dummy" />
             </div>
