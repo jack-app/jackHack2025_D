@@ -6,10 +6,11 @@ import Credit from './pages/credit/credit';
 import End from './pages/end/end';
 import Main from './pages/main/main';
 import ScenarioSelect from './pages/scenario_select/scenario_select';
-
+import BGM from './components/BGM';
 
 const App = () => (
   <BrowserRouter>
+    <BGM />
     <main>
       <Routes>
         <Route path="/" element={<Home />} />

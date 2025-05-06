@@ -3,10 +3,10 @@
     {
       "sceneId": 1,
       "speaker": "あなた",
-      "text": "明日は彼女との初めての水族館デート！！\n緊張するけど頑張って成功させるぞ！\nそういえばチケットは事前にネットで取ろうかな？",
+      "text": "明日は彼女のヌルちゃんとの初めての水族館デート！！\n緊張するけど頑張って成功させるぞ！\nそういえばチケットは事前にネットで取ろうかな？",
       "choices": [
-        { "text": "事前にネットで買っておく",   "likeability": -20,  "nextId": 2 },
-        { "text": "当日一緒に買う",             "likeability": 20,  "nextId": 3 }
+        { "text": "事前にネットで買っておく",   "likeability": 10,  "nextId": 2 },
+        { "text": "当日一緒に買う",             "likeability": -10,  "nextId": 5 }
       ]
     },
     {
@@ -14,32 +14,161 @@
       "speaker": "あなた",
       "text": "よし！事前にチケットを買うことができたぞ！！",
       "choices": [],
-      "continue": 4
+      "continue": 3
     },
     {
       "sceneId": 3,
-      "speaker": "あなた",
-      "text": "当日買えばいっか！今日はもう寝よう．．．",
+      "speaker": "ヌル",
+      "text": "チケット買っておいてくれたの？\nありがとう！",
       "choices": [],
       "continue": 4
     },
     {
       "sceneId": 4,
-      "speaker": "ヌル",
-      "text": "告白",
+      "speaker": "あなた",
+      "text": "混んでいるチケット売り場を回避して\nスムーズに入場できたぞ！\nさすが俺！",
       "choices": [],
-      "branch": {"likeability": 50, "upperId":5, "lowerId": 99 }
+      "continue": 6
     },
     {
       "sceneId": 5,
+      "speaker": "あなた",
+      "text": "チケット売り場がすごく混んでいる...\n水族館に入るのに時間がかかってデートの時間が減ってしまった...",
+      "choices": [],
+      "continue": 6
+    },
+    {
+      "sceneId": 6,
+      "speaker": "あなた",
+      "text": "水族館に入れたぞ！\nまずはどこに行こう？",
+      "choices": [
+        { "text": "お土産を見る",    "likeability": 20,   "nextId": 7 },
+        { "text": "ご飯を食べに行く","likeability": -30,  "nextId": 9 },
+        { "text": "ゆっくり見学する","likeability": 0,  "nextId": 10 }
+      ]
+    },
+    {
+      "sceneId": 7,
       "speaker": "ヌル",
-      "text": "成功",
+      "text": "開園してからすぐに来たからお土産屋さんが空いてるね！\nこれならゆっくり買い物できるね",
+      "choices": [],
+      "continue": 8
+    },
+    {
+      "sceneId": 8,
+      "speaker": "あなた",
+      "text": "お土産をゆっくり買えたし水槽に戻ろう！",
+      "choices": [],
+      "continue": 10
+    },
+    {
+      "sceneId": 9,
+      "speaker": "ヌル",
+      "text": "えぇー...まだ何も見てないのにご飯...\nkotamaくん変わってるね",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 10,
+      "speaker": "ヌル",
+      "text": "魚どもが沢山だ！\n綺麗〜〜！！",
+      "choices": [],
+      "continue": 11
+    },
+    {
+      "sceneId": 11,
+      "speaker": "あなた",
+      "text": "いい感じに水族館デートができているぞ！！\n次は何を見に行こうか？",
+      "choices": [
+        { "text": "深海魚エリア",    "likeability": 20,   "nextId": 12 },
+        { "text": "シャチショー",    "likeability": -30,  "nextId": 14 },
+        { "text": "ふれあいエリア",  "likeability": -10,  "nextId": 15 }
+      ]
+    },
+    {
+      "sceneId": 12,
+      "speaker": "ヌル",
+      "text": "私，深海魚キモカワで大好きなんだよね！！\nフクロウナギしか勝たん",
+      "choices": [],
+      "continue": 13
+    },
+    {
+      "sceneId": 13,
+      "speaker": "あなた",
+      "text": "よしヌルちゃんに喜んでもらえたぞ！！\nそろそろご飯に行こう！",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 14,
+      "speaker": "あなた",
+      "text": "大拍力のシャチしょーを楽しんだ！\nただ，服がびしょびしょになってしまった...\nもうこれ以上はデートできないな",
       "choices": []
     },
     {
-      "sceneId": 99,
-      "text": "失敗",
+      "sceneId": 15,
+      "speaker": "ヌル",
+      "text": "ふれあい．．．\n私，触るの苦手なんだよね．．．",
+      "choices": [],
+      "continue": 16
+    },
+    {
+      "sceneId": 16,
+      "speaker": "あなた",
+      "text": "あんまり楽しくなさそうだ．．．\nマズい雰囲気だな\nでも．．．\nお腹空いたからご飯行かなきゃなぁ．．．",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 17,
+      "speaker": "あなた",
+      "text": "あんまり楽しくなさそうだ．．．\nマズい雰囲気だな\nでも．．．\nお腹空いたからご飯行かなきゃなぁ．．．",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 18,
+      "speaker": "あなた",
+      "text": "さあご飯にしよう！\n何を食べようかな？",
+      "choices": [
+        { "text": "お寿司",    "likeability": -20,   "nextId": 19 },
+        { "text": "パフェ",    "likeability": 30,    "nextId": 20 }
+      ]
+    },
+    {
+      "sceneId": 19,
+      "speaker": "ヌル",
+      "text": "お寿司？\n水族館に来てお寿司？\nそれはちょっと...",
+      "choices": [],
+      "continue": 21
+    },
+    {
+      "sceneId": 20,
+      "speaker": "ヌル",
+      "text": "パフェだよね！\nお昼ご飯はパフェだよね！\n私もパフェ食べたい！",
+      "choices": [],
+      "continue": 21
+    },
+    {
+      "sceneId": 21,
+      "speaker": "あなた",
+      "text": "お腹いっぱいになったし\n水族館デートも終わりかな？",
+      "choices": [
+        { "text": "帰る",      "likeability": -20,   "nextId": 22 },
+        { "text": "見送る",    "likeability": 20,    "nextId": 23 }
+      ]
+    },
+    {
+      "sceneId": 22,
+      "speaker": "あなた",
+      "text": "今日はもう帰ろうか\n楽しかったなぁ．．．\nまた遊びに行こうね！",
       "choices": []
-    }          
+    },
+    {
+      "sceneId": 23,
+      "speaker": "あなた",
+      "text": "ヌルちゃんを見送ることにした\n楽しかったなぁ．．．\nまた遊びに行こうね！",
+      "choices": []
+    }
   ]
 }
