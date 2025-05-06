@@ -2,7 +2,8 @@
   "scenarios": [
     {
       "title": "水族館デート",
-      "image": "/scenarioImages/thumbnail_0.png",
+      "image": "/scenarioImages/scenario0_images/bg.png",
+      "bgimage": "/scenarioImages/scenario0_images/bg_with_girl.png",
       "difficulty": 3,
       "description": "彼女との水族館でのデートです．彼女からの熱が冷めないようにスマートにデートを終わらせましょう．",
       "cancel_num": 5,
@@ -11,6 +12,7 @@
     {
       "title": "テストシナリオ0",
       "image": "/scenarioImages/thumbnail_0.png",
+      "bgimage": "/scenarioImages/thumbnail_0.png",
       "difficulty": 3,
       "description": "テストシナリオ0の説明文です．",
       "cancel_num": 10,
@@ -19,6 +21,7 @@
     {
       "title": "テストシナリオ1",
       "image": "/scenarioImages/thumbnail_1.png",
+      "bgimage": "/scenarioImages/thumbnail_1.png",
       "difficulty": 2,
       "description": "テストシナリオ1の説明文です．",
       "cancel_num": 8,
@@ -39,14 +42,14 @@
       "difficulty": 2,
       "description": "長年胸に秘めた想いを抱える主人公が、同い年の女性「千代さん」にアプローチする物語。切なくも温かい恋愛模様を描きます。",
       "cancel_num": 15,
-      "id":4
+      "id":5
     },
     {
       "title":"お家",
       "image":"",
       "description":"Panzer vor",
       "cancel_num":3,
-      "id": 5
+      "id": 4
     }
     ]
 }
