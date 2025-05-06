@@ -10,7 +10,7 @@ import "./main.css"
 
 const Main = () => {
     const [sceneId, setSceneId] = useState(null);
-    const [likeability, setLikeability] = useState(0);
+    const [likeability, setLikeability] = useState(50);
     const [choices, setChoices] = useState([]);
     const [lines, setLines] = useState([]);
     const [currentLineIndex, setCurrentLineIndex] = useState(0);
@@ -20,9 +20,19 @@ const Main = () => {
     const [isShowTitleInfo, setisShowTitleInfo] = useState(false);
     const [continueId, setContinueId] = useState(null);
     const [history, setHistory] = useState([]);
+    const [isGameOver, setIsGameOver] = useState(false);
     const location = useLocation();
     const navigate = useNavigate();
   
+    useEffect(() => {
+        if (likeability <= 0) {
+          setIsGameOver(true);
+          setLines(["好感度が0になりました…デートを強制終了します",]);
+          setCurrentLineIndex(0);
+          setIsChoice(false);
+        }
+    }, [likeability]);
+
     //遷移後の初期値設定
     useEffect(() => {
         const fetchScenario = async () => {
@@ -90,6 +100,10 @@ const Main = () => {
     }, [choices, likeability, navigate, nextId, lines, currentLineIndex]);
 
     const nextLine = () => {
+        if (isGameOver) {
+            navigate("/end", { state: { Likeability: likeability } });
+            return;
+        }
         if (currentLineIndex < lines.length - 1) {
             setCurrentLineIndex((prevIndex) => prevIndex + 1);
             return;

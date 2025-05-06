@@ -5,7 +5,7 @@
       "speaker": "あなた",
       "text": "明日は彼女との初めての水族館デート！！\n緊張するけど頑張って成功させるぞ！\nそういえばチケットは事前にネットで取ろうかな？",
       "choices": [
-        { "text": "事前にネットで買っておく",   "likeability": 5,  "nextId": 2 },
+        { "text": "事前にネットで買っておく",   "likeability": -50,  "nextId": 2 },
         { "text": "当日一緒に買う",             "likeability": 0,  "nextId": 3 }
       ]
     },
