@@ -1,34 +1,33 @@
 import { useNavigate } from "react-router-dom";
 
 
-const CancelButton = ({scenarioTitle, history, cancel_num}) => {
+const CancelButton = ({ history,setHistory,id,setSceneId,setLikeability,cancel_num,setIsChoice }) => {
 
   const navigate = useNavigate();
 
-  const handleClick = () => {
-    // Cancel button clicked, navigate to the main page with the provided state
-    // and increment the cancel_num by 1
-    if (cancel_num == 0) {
-      alert("これ以上キャンセルできません。");
+  const handleCancel = () => {
+    if (history.length <= 1 || cancel_num == 0) {
       return;
     }
-    const new_cancel_num = cancel_num - 1;
-    history.likeability.pop();
-    history.scenarioId.pop();
-    navigate("/main", {
-      state: {
-        scenarioId: history.scenarioId[history.scenarioId.length - 1],
-        Likeability: history.likeability[history.likeability.length - 1],
-        scenarioTitle: scenarioTitle,
-        history: history,
-        cancel_num: new_cancel_num,
-      }});
-  }
+    const last = history[history.length - 1];
+    setHistory((prev) => prev.slice(0, -1));
+    setIsChoice(false);
+    navigate(`/main`, 
+      {state: { 
+        Id:id,
+        sceneId:last.sceneId,
+        Likeability: last.likeability,
+        cancel_num: cancel_num - 1
+    }});
+  };
 
   return (
-      <div className="cancelButton" onClick={handleClick}>
+    <div className="cancelBox">
+      <p className="cancel_num">残りキャンセル可能回数<br/>{cancel_num}回</p>
+      <button className="cancelButton" onClick={handleCancel}>
           Cancel
-      </div>
+      </button>
+    </div>
   );
 };
 
