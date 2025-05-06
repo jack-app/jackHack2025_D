@@ -31,6 +31,14 @@
       "description": "テストシナリオ2の説明文です．",
       "cancel_num": 15,
       "id": 3
+    },
+    {
+     "title":"テストシナリオ4",
+      "image": "/scenarioImages/blank.png",
+      "difficulty": 2,
+      "description": "テストシナリオ2の説明文です．",
+      "cancel_num": 15,
+      "id":4
     }
     ]
 }
