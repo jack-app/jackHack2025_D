@@ -8,14 +8,19 @@ const Home = () => {
         '/images/school_bench_noon.jpg',
         '/images/school_bench_night.jpg',
         '/images/restaurant_evening.jpg',
-        '/images/thumbnail_05.jpg',
+        '/images/restaurant_night.jpg',
+        '/images/park_noon.jpg',
+        '/images/park_night.jpg',
+        '/images/beach_noon.jpg',
+        '/images/beach_night.jpg',
+
     ];
     const [currentBg, setCurrentBg] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentBg((prev) => (prev + 1) % backgrounds.length);
-        }, 8000); // 8秒ごとに切り替え
+        }, 6000); // 8秒ごとに切り替え
 
         return () => clearInterval(interval);
     }, []);
