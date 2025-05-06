@@ -23,7 +23,7 @@ const CancelButton = ({ history,setHistory,id,setSceneId,setLikeability,cancel_n
 
   return (
     <div className="cancelBox">
-      <p className="cancel_num">残りキャンセル可能回数<br/>{cancel_num}回</p>
+      <p className="cancel_num" style={{color: "white", fontSize: "1.2rem", fontWeight: "bold"}}>残りキャンセル可能回数<br/>{cancel_num}回</p>
       <button className="cancelButton" onClick={handleCancel}>
           Cancel
       </button>
