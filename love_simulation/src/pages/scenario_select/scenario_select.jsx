@@ -35,50 +35,42 @@ const ScenarioSelect = () => {
     const isRightDisabled = currentIndex >= scenarios.length - 3;
 
     return (
-        <>
+        <div style={{ width: window.innerWidth, height: window.innerHeight, userSelect: "none" }}>
             <div className="header">
-                <div className="backButton" onClick={() => navigate(`/`)} />
+                <span className="dli-overthere-left" onClick={() => navigate(`/`)} />
                 <p className="select_title"> 遊びたいシナリオを選択してください </p>
                 <div className="dummy" />
             </div>
             <div className="scenario_select">
-            <div
-                style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: isLeftDisabled ? "#ccc" : "#aaa",
-                    position: "absolute",
-                    left: "5%",
-                    cursor: isLeftDisabled ? "not-allowed" : "pointer",
-                }}
-                onClick={!isLeftDisabled ? handleLeftClick : undefined}
-            />
-
-            {scenarios.slice(currentIndex, currentIndex + 3).map((scenario, index) => (
-                <ScenarioCard
-                    key={index}
-                    title={scenario.title}
-                    imagePath={scenario.image}
-                    difficulty={scenario.difficulty}
-                    description={scenario.description}
-                    id = {scenario.id}
-                    cancel_num={scenario.cancel_num}
+                <span
+                    className="dli-chevron-round-left"
+                    style={{
+                        cursor: isLeftDisabled ? "not-allowed" : "pointer",
+                    }}
+                    onClick={!isLeftDisabled ? handleLeftClick : undefined}
                 />
-            ))}
 
-            <div
-                style={{
-                    width: "50px",
-                    height: "50px",
-                    backgroundColor: isRightDisabled ? "#ccc" : "#aaa",
-                    position: "absolute",
-                    right: "5%",
-                    cursor: isRightDisabled ? "not-allowed" : "pointer",
-                }}
-                onClick={!isRightDisabled ? handleRightClick : undefined}
-            />
+                {scenarios.slice(currentIndex, currentIndex + 3).map((scenario, index) => (
+                    <ScenarioCard
+                        key={index}
+                        title={scenario.title}
+                        imagePath={scenario.image}
+                        difficulty={scenario.difficulty}
+                        description={scenario.description}
+                        id={scenario.id}
+                        cancel_num={scenario.cancel_num}
+                    />
+                ))}
+
+                <span
+                    className="dli-chevron-round-right"
+                    style={{
+                        cursor: isRightDisabled ? "not-allowed" : "pointer",
+                    }}
+                    onClick={!isRightDisabled ? handleRightClick : undefined}                    
+                />
             </div>
-        </>
+        </div>
     );
 };
 

@@ -6,6 +6,7 @@ const End = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [likeability, setLikeability] = useState(0);
+  const [scenarios, setScenarios] = useState([]);
 
   useEffect(() => {
     setLikeability(location.state?.Likeability || 0);
@@ -43,12 +44,29 @@ const End = () => {
     return () => clearInterval(interval); // クリーンアップ
   }, []);
 
+  useEffect(() => {
+    const fetchList = async () => {
+      try {
+        const res = await fetch("/scenarios/scenarioList.json");
+        if (!res.ok) throw new Error("Failed to fetch scenarioList.json");
+        const json = await res.json();
+        console.log("fetched scenarios:", json.scenarios);
+        setScenarios(json.scenarios || []);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchList();
+  }, []);
+
   const handleButtonClick = () => {
     navigate("/");
   };
 
+  const currentScenario = scenarios.find(s => s.id === location.state?.id);
+
   return (
-    <div style={{ display: "flex", width: "100%", height: "100vh", justifyContent: "center", alignItems: "center" }}>
+    <div style={{ display: "flex", width: "100%", height: "100vh", justifyContent: "center", alignItems: "center",userSelect:"none" }}>
       {/* 紙吹雪コンテナ */}
       <div id="confetti-container" style={{ position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh", pointerEvents: "none", overflow: "hidden", zIndex: 9999 }}></div>
 
@@ -74,7 +92,7 @@ const End = () => {
         <span className="text_like_cancel" style={{ fontSize: "30px" }}>
           好感度：{likeability}
           <br />
-          キャンセル回数：y
+          キャンセル回数：{currentScenario?.cancel_num - location.state?.cancel_num}
           <br />
           <br />
         </span>

@@ -15,6 +15,7 @@ const LoveMeter = ({ love }) => {
         marginTop: "10px",
         display: "flex",
         flexDirection: "column-reverse",
+        border: "2px solid white",
         }}
       >
         <div
