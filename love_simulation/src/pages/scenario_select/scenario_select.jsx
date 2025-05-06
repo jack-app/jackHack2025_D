@@ -35,7 +35,7 @@ const ScenarioSelect = () => {
     const isRightDisabled = currentIndex >= scenarios.length - 3;
 
     return (
-        <>
+        <div style={{ width: window.innerWidth, height: window.innerHeight, userSelect:"none"}}>
             <div className="header">
                 <div className="backButton" onClick={() => navigate(`/`)} />
                 <p className="select_title"> 遊びたいシナリオを選択してください </p>
@@ -78,7 +78,7 @@ const ScenarioSelect = () => {
                 onClick={!isRightDisabled ? handleRightClick : undefined}
             />
             </div>
-        </>
+        </div>
     );
 };
 

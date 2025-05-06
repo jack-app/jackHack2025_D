@@ -153,7 +153,7 @@ const Main = () => {
       };
 
     return (
-        <div style={{ width: window.innerWidth, height: window.innerHeight }}>
+        <div style={{ width: window.innerWidth, height: window.innerHeight, userSelect:"none"}}>
             <div className="game-display">
                 <CancelButton 
                     id={location.state?.Id}
