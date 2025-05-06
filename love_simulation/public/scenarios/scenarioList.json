@@ -28,20 +28,31 @@
       "id": 2
     },
     {
-      "title":"テストシナリオ２",
-      "image": "/scenarioImages/blank.png",
+      "title":"遠距離彼女と初デート",
+      "image": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
+      "bgimage": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
       "difficulty": 2,
-      "description": "テストシナリオ2の説明文です．",
+      "description": "SNSで知り合った遠距離恋愛中の彼女との初デート。彼女の期待に応えられるよう、あなたはどんな服装で出かける",
       "cancel_num": 15,
       "id": 3
     },
     {
       "title":"五十年目",
       "image": "/scenarioImages/thumbnail_05.jpg",
+      "bgimage": "/scenarioImages/scenario5_images/nose_back.jpg",
       "difficulty": 2,
       "description": "長年胸に秘めた想いを抱える主人公が、同い年の女性「千代さん」にアプローチする物語。切なくも温かい恋愛模様を描きます。",
       "cancel_num": 15,
-      "id": 5
+      "id":5
+    },
+    {
+      "title":"お家",
+      "image":"/scenario4_images/20250505_115415000_iOS.jpg",
+      "description":"Panzer vor",
+      "bgimage":"scenario4_images/outi.jpg",
+      "difficulty":3,
+      "cancel_num":3,
+      "id": 4
     }
     ]
 }

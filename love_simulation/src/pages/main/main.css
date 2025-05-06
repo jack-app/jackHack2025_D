@@ -25,9 +25,10 @@
     text-align: center;
     background-color: rgb(210, 75, 75);
     font-weight: bold;
-    width: 75px;
+    width: 100px;
     padding: 20px 0px;
     margin: 0;
+    font-size: 1.5rem;
 }
 .cancelButton:hover {
     cursor: pointer;
@@ -41,10 +42,11 @@
     text-align: center;
     background-color: rgb(54, 162, 198);
     font-weight: bold;
-    width: 75px;
+    width: 100px;
     top: 20px;
     right: 20px;
     padding: 20px 0px;
+    font-size: 1.2rem;
 }
 
 .menuButton:hover {

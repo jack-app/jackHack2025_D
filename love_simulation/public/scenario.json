@@ -1,0 +1,321 @@
+{
+  "scenarios": [
+      {
+        "title": "テストシナリオ0",
+        "image": "/scenarioImages/thumbnail_0.png",
+        "difficulty": 3,
+        "description": "テストシナリオ0の説明文です．",
+        "scenes" :[
+          {
+            "sceneId": 1,
+            "speaker": "美香",
+            "text": "こんにちは！今日はどこ行きたい？",
+            "choices": [
+              { "text": "遊園地に行く",   "likeability": 5,  "nextId": 2 },
+              { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
+              { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 2,
+            "speaker": "美香",
+            "text": "遊園地！？楽しみ！今日はまず何に乗りたい？",
+            "choices": [
+              { "text": "ジェットコースターに乗る", "likeability": 5,  "nextId": 4 },
+              { "text": "観覧車に乗る",             "likeability": 2,  "nextId": 5 }
+            ]
+          },
+          {
+            "sceneId": 3,
+            "speaker": "美香",
+            "text": "カフェいいね，ゆっくり話そ！何を飲む？",
+            "choices": [
+              { "text": "カフェラテを注文する", "likeability": 4,  "nextId": 6 },
+              { "text": "紅茶を注文する",       "likeability": 3,  "nextId": 7 }
+            ]
+          },
+          {
+            "sceneId": 4,
+            "speaker": "美香",
+            "text": "ジェットコースター楽しかったね！次は何に乗る？",
+            "choices": [
+              { "text": "観覧車に乗る", "likeability": 2,  "nextId": 5 },
+              { "text": "お化け屋敷に行く",   "likeability": 3,  "nextId": 8 }
+            ]
+          },
+          {
+            "sceneId": 5,
+            "speaker": "美香",
+            "text": "観覧車からの景色最高だったね！次は何する？",
+            "choices": [
+              { "text": "お化け屋敷に行く",   "likeability": 3,  "nextId": 8 },
+              { "text": "ジェットコースターに乗る",   "likeability": 2,  "nextId": 4 }
+            ]
+          },
+          {
+            "sceneId": 6,
+            "speaker": "美香",
+            "text": "カフェラテ美味しいね！何か話したいことある？",
+            "choices": [
+              { "text": "最近の趣味について話す",   "likeability": 4,  "nextId": 9 },
+              { "text": "好きな映画について話す",   "likeability": 3,  "nextId": 10 }
+            ]
+          },
+          {
+            "sceneId": 7,
+            "speaker": "美香",
+            "text": "紅茶もいいね！何か話したいことある？",
+            "choices": [
+              { "text": "最近の趣味について話す",   "likeability": 4,  "nextId": 9 },
+              { "text": "好きな映画について話す",   "likeability": 3,  "nextId": 10 }
+            ]
+          },
+          {
+            "sceneId": 8,
+            "text": "お化け屋敷めっちゃ怖かった！ちょっと落ち着こう？",
+            "choices": [
+              { "text": "ベンチで休憩する", "likeability": 3, "nextId": 11 },
+              { "text": "もう一回別の乗り物に乗る", "likeability": 2, "nextId": 12 }
+            ]
+          },
+          {
+            "sceneId": 9,
+            "text": "へえ～そんな趣味があるんだ！もっと聞かせて！",
+            "choices": [
+              { "text": "具体的なエピソードを話す", "likeability": 4, "nextId": 13 },
+              { "text": "趣味のきっかけを話す", "likeability": 3, "nextId": 13 }
+            ]
+          },
+          {
+            "sceneId": 10,
+            "text": "映画いいね！どんなジャンルが好き？",
+            "choices": [
+              { "text": "ホラーが好き", "likeability": 2, "nextId": 14 },
+              { "text": "ラブコメが好き", "likeability": 4, "nextId": 14 }
+            ]
+          },
+          {
+            "sceneId": 11,
+            "text": "休憩できた～ありがとう．楽しかったね．",
+            "choices": [
+              { "text": "また一緒に来ようと誘う", "likeability": 5, "nextId": 15 },
+              { "text": "今日はそろそろ帰ろうと提案する", "likeability": 1, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 12,
+            "text": "まだまだ元気だね！次は何乗ろうか？",
+            "choices": [
+              { "text": "メリーゴーランド", "likeability": 2, "nextId": 11 },
+              { "text": "ジェットコースターもう一回！", "likeability": 1, "nextId": 4 }
+            ]
+          },
+          {
+            "sceneId": 13,
+            "text": "なるほど～その話面白いね！あなたってほんと多趣味だね．",
+            "choices": [
+              { "text": "もっと語る", "likeability": 3, "nextId": 15 },
+              { "text": "話を相手に振る", "likeability": 4, "nextId": 14 }
+            ]
+          },
+          {
+            "sceneId": 14,
+            "text": "わかる！私もそのジャンル好きかも！また今度一緒に観ようよ！",
+            "choices": [
+              { "text": "ぜひ！と答える", "likeability": 5, "nextId": 15 },
+              { "text": "ちょっと照れてごまかす", "likeability": 3, "nextId": 15 }
+            ]
+          },
+          {
+            "sceneId": 15,
+            "text": "今日はすごく楽しかった！また遊ぼうね！",
+            "choices": [
+              { "text": "うん！また誘うね！", "likeability": 5, "nextId": 16 },
+              { "text": "こちらこそありがとう！", "likeability": 4, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 16,
+            "text": "デートはここで終了です．好感度スコアを集計します．",
+            "choices": []
+          }          
+        ]
+      },
+      {
+        "title": "テストシナリオ1",
+        "image": "/scenarioImages/thumbnail_1.png",
+        "difficulty": 2,
+        "description": "テストシナリオ1の説明文です．",
+        "scenes" :[
+          {
+            "sceneId": 1,
+            "speaker": "美香",
+            "text": "こんにちは！今日はどこ行きたい？",
+            "choices": [
+              { "text": "遊園地に行く", "likeability": 5,  "nextId": 2 },
+              { "text": "カフェに行く",   "likeability": 3,  "nextId": 3 },
+              { "text": "家に帰る",       "likeability": -5, "nextId": 16 }
+            ]
+          },
+          {
+            "sceneId": 2,
+            "speaker": "美香",
+            "text": "遊園地！？楽しみ！今日はまず何に乗りたい？",
+            "choices": [
+              { "text": "ジェットコースターに乗る", "likeability": 5,  "nextId": 4 },
+              { "text": "観覧車に乗る",             "likeability": 2,  "nextId": 5 }
+            ]
+          },
+          {
+            "sceneId": 3,
+            "speaker": "美香",
+            "text": "カフェいいね，ゆっくり話そ！何を飲む？",
+            "choices": [
+              { "text": "カフェラテを注文する", "likeability": 4,  "nextId": 6 },
+              { "text": "紅茶を注文する",       "likeability": 3,  "nextId": 7 }
+            ]
+          },
+          {
+            "sceneId": 4,
+            "speaker": "美香",
+            "text": "ジェットコースター楽しかったね！次は何に乗る？",
+            "choices": [
+              { "text": "観覧車に乗る",   "likeability": 2,  "nextId": 5 },
+              { "text": "お化け屋敷に行く",   "likeability": 3,  "nextId": 8 }
+            ]
+          },
+          {
+            "sceneId": 5,
+            "speaker": "美香",
+            "text": "観覧車からの景色最高だったね！次は何する？",
+            "choices": [
+              { "text": "お化け屋敷に行く",   "likeability": 3,  "nextId": 8 },
+              { "text": "ジェットコースターに乗る",   "likeability": 2,  "nextId": 4 }
+            ]
+          },
+          {
+            "sceneId": 6,
+            "speaker": "美香",
+            "text": "カフェラテ美味しいね！何か話したいことある？",
+            "choices": [
+              { "text": "最近の趣味について話す",   "likeability": 4,  "nextId": 9 },
+              { "text": "好きな映画について話す",   "likeability": 3,  "nextId": 10 },
+              { "text": "最近の本について話す",   "likeability": 2,  "nextId": 11 }
+            ]
+          }
+        ]
+      },
+      {
+        "title":"テストシナリオ2part-1",
+        "scenes":[
+          {
+            "sceneId":1,
+            "speaker": "あなた",
+            "text":"今日は美香とディスティニーランドに行く日。\nもともと生徒会のメンバーで行く予定だったんだが、俺と美香以外キャンセルしたから二人きりになってしまった。",
+            "nextId":2                                   
+          },
+          {
+            "sceneId":2,
+            "speaker": "美香",
+            "text":"ディスティニーランド楽しみだね～\n最初はどこに行こう？",
+            "choices":[
+              {"text":"一番人気のポリー・ハッターでしょ！","likeability":-1,"nextId":3},
+              {"text":"やっぱり最初はミッケーハウスかな。","likeability":-2,"nextId":3},
+              {"text":"フィクションランドとアニメラルランドがあるよね、どっちがいい？","likeability":2,"nextId":4}
+            ]
+          },
+          {
+            "sceneId":3,
+            "speaker": "美香",
+            "text":"そうだね、そこに行こう。\n数時間後…",
+            "nextId":5
+          },
+          {
+            "sceneId":4,
+            "speaker": "美香",
+            "text":"フィクションランドに行きたい！\n数時間後…",
+            "nextId":5
+          },
+          {
+            "sceneId":5,
+            "speaker": "美香",
+            "text":"はー、楽しかったぁ。そろそろ何か食べない？それともまだ乗る？",
+            "choices":[
+              {"text":"何か食べに行こう","likeability":2,"nextId":6},
+              {"text":"多分今なら空いてる乗り物があるよね、それに乗りに行こう。","likeability":-2,"nextId":7},
+              {"text":"美香はどっちがいい？","likeability":0,"nextId":8}
+            ]
+          },
+          {
+            "sceneId":6,
+            "speaker": "美香",
+            "text":"やった！お腹空いてたんだぁ、おいしいもの食べよっ！",
+            "nextId":9   
+          },
+          {
+            "sceneId":7,
+            "speaker": "美香",
+            "text":"乗り物だけじゃなく、私のお腹も減ってるんですけどっ！\nまあそんなに乗りたいなら乗りに行こう＿＿",
+            "nextId":10
+          },
+          {
+            "sceneId":9,
+            "speaker": "美香",
+            "text":"私はお腹空いたから何か食べたいな。",
+            "nextId":9
+          },
+          {
+            "sceneId":9,
+            "speaker": "美香",
+            "text":"ふぅ、トナルトのサック！サック！スペシャルメニューおいしかったね！",
+            "choices":[
+                {"text":"テーマパークだからちょっと高かったけどね。","likeability":-3,"nextId":11},
+                {"text":"そうだね、おいしかった。","likeability":1,"nextId":12},
+                {"text":"他のメニューも美味しそうだったからまた食べに来たいね。","likeability":2,"nextId":13}
+            ]
+          },
+          { 
+            "sceneId":11,
+            "speaker": "美香",
+            "text":"そこっ！そういうことを言わない！",
+            "nextId":14
+          },
+          {
+            "sceneId":12,
+            "speaker": "美香",
+            "text":"じゃあ次はあれに乗ろう？",
+            "nextId":14
+          },
+          {
+            "sceneId":13,
+            "speaker": "美香",
+            "text":"そうそう！他のも美味しそうだったよね～。\nあっ、今度はあれに乗ろうよ！",
+            "nextId":14
+          },
+          {
+            "sceneId":15,
+            "speaker": "美香",
+            "text":"数時間後…",
+            "nextId":16
+          },
+          {
+            "sceneId":16,
+            "speaker": "美香",
+            "text":"今日は楽しかった！また行こうね。",
+            "choices":[
+              {"text":"俺も楽しかった！また行こうね。","likeability":2,"nextId":17},
+              {"text":"今度はみんなで来よう。","likeability":1,"nextId":17},
+              {"text":"もうしばらくはいいかな。今度は別のところへ行こう。","likeability":-1,"nextId":17}
+              ]
+          },
+          {
+            "sceneId":17,
+            "speaker": "美香",
+            "text":"終"
+          }
+        ]
+
+      }
+      
+    ]
+}
