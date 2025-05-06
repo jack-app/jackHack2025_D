@@ -206,11 +206,11 @@
         ]
       },
       {
-        "title":"テストシナリオ２",
+        "title":"テストシナリオ2part-1",
         "scenes":[
           {
             "sceneId":1,
-            "speaker": "美香",
+            "speaker": "あなた",
             "text":"今日は美香とディスティニーランドに行く日。\nもともと生徒会のメンバーで行く予定だったんだが、俺と美香以外キャンセルしたから二人きりになってしまった。",
             "nextId":2                                   
           },
@@ -315,6 +315,37 @@
           }
         ]
 
+      },
+      {
+        "title":"テストシナリオ2part-2",
+        "scenes":[
+          {
+            "sceneId":1,
+            "speaker":"美香",
+            "text":"ねえねえ、今日暇？",
+            "choices":[
+              {"text":"暇だよ","likeability":1,"nextId":2},
+              {"text":"今暇になった！","likeability":2,"nextId":3},
+              {"text":"今日は忙しいんだ","likeability":-50,"nextId":}
+            ]
+          },
+          {
+            "sceneId":2,
+            "speaker":"美香",
+            "text":"じゃあさ、一緒に映画見ようよ",
+            "choices":[
+              {"text":"いいね","likeability":0,"nextId":4},
+              {"text":"今日は映画の気分じゃないなあ","likeability":-5,"nextId":5},
+              {"text":""} 
+            ]
+          },
+
+          {
+            "sceneId":,
+            "speaker":"美香",
+            "text":"じゃあ、またね"
+          }
+        ]
       }
     ]
 }
