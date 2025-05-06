@@ -19,20 +19,20 @@
       "id": 1
     },
     {
-      "title": "テストシナリオ1",
-      "image": "/scenarioImages/thumbnail_1.png",
-      "bgimage": "/scenarioImages/thumbnail_1.png",
-      "difficulty": 2,
-      "description": "テストシナリオ1の説明文です．",
-      "cancel_num": 8,
-      "id": 2
-    },
-    {
       "title":"遠距離彼女と初デート",
       "image": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
       "bgimage": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
       "difficulty": 2,
       "description": "SNSで知り合った遠距離恋愛中の彼女との初デート。彼女の期待に応えられるよう、あなたはどんな服装で出かける",
+      "cancel_num": 15,
+      "id": 2
+    },
+    {
+      "title":"ディスティニー",
+      "image": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
+      "bgimage": "/scenarioImages/scenario2_images/春の公園（日中）.jpg",
+      "difficulty": 2,
+      "description": "遊園地でのデート．",
       "cancel_num": 15,
       "id": 3
     },
@@ -49,7 +49,7 @@
       "title":"お家",
       "image":"/scenario4_images/20250505_115415000_iOS.jpg",
       "description":"Panzer vor",
-      "bgimage":"/scenario4_images/outi.jpg",
+      "bgimage":"scenario4_images/outi.jpg",
       "difficulty":3,
       "cancel_num":3,
       "id": 4

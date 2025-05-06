@@ -124,7 +124,8 @@
         {
           "sceneId":16,
           "speaker":"",
-          "text":"お泊まりエンド" 
+          "text":"お泊まりエンド" ,
+          "choices":[]
         },
         {
           "sceneId":17,
