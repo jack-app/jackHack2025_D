@@ -10,12 +10,12 @@
       "id": 0
     },  
     {
-      "title": "テストシナリオ0",
-      "image": "/scenarioImages/thumbnail_0.png",
-      "bgimage": "/scenarioImages/thumbnail_0.png",
-      "difficulty": 3,
-      "description": "テストシナリオ0の説明文です．",
-      "cancel_num": 10,
+      "title": "一瞬で終わった",
+      "image": "/scenarioImages/scenario1_images/サムネ.png",
+      "bgimage": "love_simulation/public/scenarioImages/scenario1_images/中盤.png",
+      "difficulty": 5,
+      "description": "近寄りがたい雰囲気のさきさん。そんな彼女との日々を描いたノンフィクションストーリー",
+      "cancel_num": 2,
       "id": 1
     },
     {

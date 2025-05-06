@@ -7,7 +7,7 @@
         "choices": [
         { "text": "なにもしない", "likeability": 5,  "nextId": 4 },
         { "text": "普通に話かける",   "likeability": 0,  "nextId": 2 },
-        { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 3 }
+        { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 37 }
         ]
     },
     {
@@ -38,7 +38,7 @@
         "choices": [
         { "text": "なにもしない", "likeability": 5,  "nextId": 9 },
         { "text": "話しかける",   "likeability": 2,  "nextId": 6 },
-        { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 3 }
+        { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 37 }
        
         ]
     },
@@ -92,7 +92,7 @@
         "speaker": "さき",
         "text": "なんか急すぎて無理だな、\n無理です\nごめんなさい",
         "choices": [],
-        "continue": 13
+        "continue": 37
       },
     {
         "sceneId": 13,
@@ -162,7 +162,7 @@
         "speaker": "さき",
         "text": "楽しかったね〜。今からはどうする？",
         "choices": [
-        { "text": "夜になったし帰ろうか", "likeability": 5,  "nextId": 100 },
+        { "text": "夜になったし帰ろうか", "likeability": 5,  "nextId": 37 },
         { "text": "もう少し話したいから公園に行かない？",   "likeability": 10,  "nextId": 24 },
         { "text": "なにかご飯食べない？",       "likeability": 3, "nextId": 22 }
         ]
@@ -179,7 +179,7 @@
         "text": "そっかー、今日はありがとう！",
         "speaker": "あなた",
         "choices": [
-        { "text": "送って行かない",   "likeability": 0,  "nextId": 18 },
+        { "text": "送って行かない",   "likeability": 0,  "nextId": 37 },
         { "text": "送って行く",   "likeability": -8,  "nextId": 25 }
         ]
     },
@@ -195,7 +195,7 @@
         "text": "今日こんなに楽しくなると思わなかった\nまた一緒にどっか行きたいなー\nあなたは今日楽しかった？",
         "speaker": "さき",
         "choices": [
-        { "text": "楽しかったよ！",   "likeability": 5,  "nextId": 15 },
+        { "text": "映画よりさきと喋れたことが楽しかったよ！",   "likeability": 5,  "nextId":26  },
         { "text": "さきといれるだけで楽しかった",   "likeability": 1,  "nextId": 26 }
         ]
     },
@@ -203,10 +203,8 @@
         "sceneId": 26,
         "text": "えーなんで？笑笑\n他の人と行っても楽しいでしょ笑笑\nそれこそ彼女とかと行った方が楽しいよ\n彼女は欲しくないの？",
         "speaker": "さき",
-        "choices": [
-        { "text": "スポッチャ行きたいなー",   "likeability": 5,  "nextId": 15 },
-        { "text": "さきが観たいって言ってた映画はどうー？",   "likeability": 10,  "nextId": 15 }
-        ]
+        "choices": [],
+        "continue": 27
     },
     {
         "sceneId": 27,
@@ -214,96 +212,88 @@
         "speaker": "あなた",
         "choices": [
         { "text": "めちゃくちゃ欲しい", "likeability": 5,  "nextId": 28 },
-        { "text": "好きな人なら彼女にしたいかもなー",   "likeability": 2,  "nextId": 9 },
-        { "text": "いらないかなー",       "likeability": -5, "nextId": 28 }
+        { "text": "好きな人なら彼女にしたいかもなー",   "likeability": 2,  "nextId": 28 }
         ]
     },
     {
-        "sceneId": 9,
+        "sceneId": 28,
         "text":"へ〜。そうだったんだ〜 ",
+        "speaker": "さき",
         "choices": [
-        { "text": "さきは彼氏欲しい？", "likeability": 4,  "nextId": 10 },
-        { "text": "さきが彼女だったらいいのになー",       "likeability": 3,  "nextId": 11 },
-        { "text": "でも自分には彼女できる気しないな笑笑",       "likeability": 3,  "nextId": 12 }
+        { "text": "さきは彼氏欲しい？", "likeability": 4,  "nextId": 29 },
+        { "text": "さきが彼女だったらいいのになー",       "likeability": 3,  "nextId": 30 }       
         ]
     },
     {
-        "sceneId": 10,
-        "text": "お菓子ありがとう！めちゃくちゃ美味しかった。なんで私にくれたの？",
+        "sceneId": 29,
+        "speaker": "さき",
+        "text": "うーんめっちゃ欲しいってわけじゃないかな〜。\nでも実はね、あなたが塾に入ってきた時はいいなーって思ってた",
+        "choices": [],
+        "continue": 31
+      },
+      {
+        "sceneId": 30,
+        "speaker": "さき",
+        "text": "えーどういうこと？\n私のこと好きなの？",
+        "choices": [],
+        "continue": 31
+      },
+      {
+        "sceneId": 31,
+        "text": "(っ...!)",
+        "speaker": "あなた",
         "choices": [
-        { "text": "仲良くなりたいって思ったから",   "likeability": 2,  "nextId": 5 },
-        { "text": "友達とのノリ的な？",   "likeability": 3,  "nextId": 8 },
-        { "text": "美味しかったからあなたにも食べて欲しかった",   "likeability": 3,  "nextId": 8 }
+        { "text": "好きです、付き合ってください", "likeability": 5,  "nextId": 32 },
+        { "text": "いやーさきのこと好きかもしれない、でも自分に対して興味ないよね",   "likeability": 2,  "nextId": 32 }
         ]
     },
     {
-        "sceneId": 11,
-        "text": "前は話したことなかったのに最近めっちゃ話すようになったよねー。今度一緒にどっか行かない？どこか行きたいところある？",
+        "sceneId": 32,
+        "text":"えーどうしようかなー笑笑\nそんなこと言われるって思わなかった ",
+        "speaker": "さき",
         "choices": [
-        { "text": "スポッチャ行きたいなー",   "likeability": 5,  "nextId": 7 },
-        { "text": "さきが観たいって言ってた映画はどうー？",   "likeability": 10,  "nextId": 6 }
+        { "text": "さきがいいなら彼女になってほしい", "likeability": 4,  "nextId": 33 },
+        { "text": "付き合ったらもっと色々楽しめるし付き合わない？",       "likeability": 3,  "nextId": 33 }       
         ]
     },
     {
-        "sceneId": 12,
-        "text": "券売機の前に来たぞ？",
-        "choices": [
-        { "text": "奢ってあげる",   "likeability": 0,  "nextId": 9 },
-        { "text": "奢らない",   "likeability": -8,  "nextId": 10 },
-        { "text": "最近の本について話す",   "likeability": 2,  "nextId": 11 }
-        ]
-    }, 
-    {
-    "sceneId": 13,
-    "text":"気になるな、どうしようか",
-    "choices": [
-        { "text": "なにもしない", "likeability": 5,  "nextId": 2 },
-        { "text": "普通に話かける",   "likeability": 3,  "nextId": 5 },
-        { "text": "連絡先交換を頼む",       "likeability": -5, "nextId": 2 }
-    ]
+        "sceneId": 33,
+        "text": "うーん、いいよ。付き合おっか",
+        "speaker": "さき",
+        "choices": [],
+        "continue": 34
     },
     {
-    "sceneId": 14,
-    "text": "席が近くなったぞ、どうしようか",
-    "choices": [
-        { "text": "なにもしない", "likeability": 5,  "nextId": 3 },
-        { "text": "話しかける",   "likeability": 2,  "nextId": 5 },
-        { "text": "連絡先交換を頼む",       "likeability": -5, "nextId": 20 }
-    ]
+        "sceneId": 34,
+        "speaker": "あなた",
+        "text": "(え、、、まじか...!)\n(さきが彼女なんて夢みたいだ)",
+        "choices": [],
+        "continue": 35
     },
     {
-    "sceneId": 15,
-    "text":"塾で会うのはもう最後だ、どうしようか ",
-    "choices": [
-        { "text": "お菓子をあげる", "likeability": 4,  "nextId": 6 },
-        { "text": "なにもしない",       "likeability": 3,  "nextId": 7 }
-    ]
+        "sceneId": 35,
+        "speaker": "",
+        "text": "翌日",
+        "choices": [],
+        "continue": 36
     },
     {
-    "sceneId": 16,
-    "text": "お菓子ありがとう！めちゃくちゃ美味しかった。なんで私にくれたの？",
-    "choices": [
-        { "text": "仲良くなりたいって思ったから",   "likeability": 2,  "nextId": 5 },
-        { "text": "友達とのノリ的な？",   "likeability": 3,  "nextId": 8 },
-        { "text": "美味しかったからあなたにも食べて欲しかった",   "likeability": 3,  "nextId": 8 }
-    ]
+        "sceneId": 36,
+        "speaker": "さき",
+        "text": "ごめん、やっぱあのあと色々考えた結果やっぱ無理だなって思ったので昨日のことは無かったことにしてください",
+        "choices": [],
+        "continue": 36
     },
     {
-    "sceneId": 17,
-    "text": "前は話したことなかったのに最近めっちゃ話すようになったよねー。今度一緒にどっか行かない？どこか行きたいところある？",
-    "choices": [
-        { "text": "スポッチャ行きたいなー",   "likeability": 5,  "nextId": 7 },
-        { "text": "さきが観たいって言ってた映画はどうー？",   "likeability": 10,  "nextId": 6 }
-    ]
-    },
-    {
-    "sceneId": 18,
-    "text": "券売機の前に来たぞ？",
-    "choices": [
-        { "text": "奢ってあげる",   "likeability": 0,  "nextId": 9 },
-        { "text": "奢らない",   "likeability": -8,  "nextId": 10 },
-        { "text": "最近の本について話す",   "likeability": 2,  "nextId": 11 }
-    ]
+        "sceneId": 37,
+        "speaker": "",
+        "text": "ゲーム終了です",
+        "choices": []
+        
     }
+
+
+    
+    
 ]
 }
