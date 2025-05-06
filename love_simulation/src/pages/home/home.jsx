@@ -8,6 +8,7 @@ const Home = () => {
             <p id="title1">恋愛cancelシミュレーション</p>
             <p id="title2">恋Can</p>
             <StartButton />
+            <CreditButton />
         </div>
     );
     }
