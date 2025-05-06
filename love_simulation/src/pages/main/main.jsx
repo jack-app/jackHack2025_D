@@ -176,7 +176,6 @@ const Main = () => {
                           style={{
                               zIndex: 1,
                               position: "absolute",
-                              backgroundColor: "rgba(255, 255, 255, 0.8)",
                               width: "100%",
                               height: "75%",
                               display: "flex",
@@ -187,11 +186,14 @@ const Main = () => {
                         >
                             <div
                                 style={{
+                                    backgroundColor: "rgba(218, 214, 214, 0.7)",
                                     display: "grid",
                                     gridTemplateColumns: "1fr 1fr",
                                     gridTemplateRows: "1fr 1fr", 
                                     width: "100%",
                                     height: "100%",
+                                    borderTop: "3px solid black",
+                                    borderLeft: "3px solid black",
                                 }}
                             >
                                 {choices.map((item, index) => (
