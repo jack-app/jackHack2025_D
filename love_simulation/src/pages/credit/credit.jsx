@@ -12,8 +12,8 @@ const Credit = () => {
     return (
         <div className="credit">
             <h1>Credit</h1>
-            <p>Developed by:ちご, ノセ, ピスラ, ビタミン21, kotama, yke</p>
-            <p>Story Telling by:ちご, ノセ, ビタミン21, yke</p>
+            <p>Developed by:ちご, ノセ, ピスラ, ビタミン21, ポッチャマ, kotama, yke</p>
+            <p>Story Telling by:ちご, ノセ, ビタミン21, ポッチャマ, yke</p>
             <p>Senior 恋愛 engineer:ピスラ</p>
             <p>Super 恋愛 adviser:ピスラ</p>
             <p>General 恋愛 Director:ピスラ</p>
