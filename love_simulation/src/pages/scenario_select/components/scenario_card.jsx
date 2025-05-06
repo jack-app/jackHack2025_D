@@ -17,7 +17,8 @@ const ScenarioCard = ({ title, imagePath, difficulty, description, id, cancel_nu
   return (
     
     <div className="scenario-card" onClick={handleClick}>
-      <p className="card-text">シナリオタイトル：<br/>{title}</p>
+      <p className="title-text">{title}</p>
+      <p className="difficulty-text">難易度：{difficultyFeature}</p>
       {imagePath && (
         <img
           src={imagePath}
@@ -26,8 +27,7 @@ const ScenarioCard = ({ title, imagePath, difficulty, description, id, cancel_nu
           style={{ border:"1px solid black", borderRadius: "10px" }}
         />
       )}
-      <p className="card-text">難易度：{difficultyFeature}</p>
-      <p className="description-text">説明：{description}</p>
+      <p className="description-text">{description}</p>
     </div>
   );
 };
