@@ -26,7 +26,7 @@
       "sceneId":4,
       "speaker": "美香",
       "text":"フィクションランドに行きたい！",
-      "nextId":18
+      "continue":18
     },
     {
       "sceneId":18,
@@ -82,25 +82,25 @@
       "sceneId":11,
       "speaker": "美香",
       "text":"そこっ！そういうことを言わない！",
-      "nextId":14
+      "continue":14
     },
     {
       "sceneId":12,
       "speaker": "美香",
       "text":"じゃあ次はあれに乗ろう？",
-      "nextId":14
+      "continue":14
     },
     {
       "sceneId":13,
       "speaker": "美香",
       "text":"そうそう！他のも美味しそうだったよね～。\nあっ、今度はあれに乗ろうよ！",
-      "nextId":14
+      "continue":14
     },
     {
       "sceneId":14,
       "speaker": "",
       "text":"数時間後…",
-      "nextId":16
+      "continue":16
     },
     {
       "sceneId":16,
