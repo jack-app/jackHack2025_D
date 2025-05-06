@@ -3,11 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import LoveMeter from "./components/love_meter";
 import CancelButton from "./components/cancel_button";
 import LineBox  from "./components/line_box";
-import Character from "./components/character"
 import ChoiceButton from "./components/choice_button";
 import IsBackInfo from "./components/isBack_info";
-import "./main.css"
 import QuestionBox from "./components/question_window";
+import "./main.css"
 
 const Main = () => {
     const [sceneId, setSceneId] = useState(null);
@@ -177,7 +176,6 @@ const Main = () => {
                           style={{
                               zIndex: 1,
                               position: "absolute",
-                              backgroundColor: "rgba(255, 255, 255, 0.8)",
                               width: "100%",
                               height: "75%",
                               display: "flex",
@@ -188,11 +186,14 @@ const Main = () => {
                         >
                             <div
                                 style={{
+                                    backgroundColor: "rgba(218, 214, 214, 0.7)",
                                     display: "grid",
                                     gridTemplateColumns: "1fr 1fr",
                                     gridTemplateRows: "1fr 1fr", 
                                     width: "100%",
                                     height: "100%",
+                                    borderTop: "3px solid black",
+                                    borderLeft: "3px solid black",
                                 }}
                             >
                                 {choices.map((item, index) => (
@@ -208,8 +209,7 @@ const Main = () => {
                     </div>
                 ) : (
                     <div onClick={nextLine}>
-                        <Character speaker={speaker} />
-                        <LineBox line={lines[currentLineIndex]} />
+                        <LineBox line={lines[currentLineIndex]} speaker={speaker} />
                     </div>
                 )}
             </div>
