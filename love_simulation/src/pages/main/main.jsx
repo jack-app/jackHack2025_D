@@ -101,7 +101,7 @@ const Main = () => {
 
     const nextLine = () => {
         if (isGameOver) {
-            navigate("/end", { state: { Likeability: likeability } });
+            navigate("/end", { state: { id: location.state.Id, Likeability: likeability, cancel_num: location.state?.cancel_num } });
             return;
         }
         if (currentLineIndex < lines.length - 1) {
@@ -121,7 +121,9 @@ const Main = () => {
         }else if (choices.length === 0) {
             navigate("/end", {
                 state: {
+                    id: location.state.Id,
                     Likeability: likeability,
+                    cancel_num: location.state?.cancel_num
                 },
             });
             return;
