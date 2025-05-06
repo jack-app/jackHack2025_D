@@ -55,6 +55,7 @@ const ScenarioSelect = () => {
                         key={index}
                         title={scenario.title}
                         imagePath={scenario.image}
+                        bgimagePath={scenario.bgimage}
                         difficulty={scenario.difficulty}
                         description={scenario.description}
                         id={scenario.id}

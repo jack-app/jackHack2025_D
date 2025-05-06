@@ -120,7 +120,8 @@ const Main = () => {
                     Id: location.state.Id,
                     sceneId: continueId,
                     Likeability: likeability,
-                    cancel_num: location.state.cancel_num
+                    cancel_num: location.state.cancel_num,
+                    bgimagePath:location.state?.bgimagePath,
                 }
             });
         }else if (branch != null){
@@ -190,7 +191,8 @@ const Main = () => {
             Id:location.state?.Id,
             sceneId:item.nextId,
             Likeability: likeability + item.likeability,
-            cancel_num: location.state?.cancel_num
+            cancel_num: location.state?.cancel_num,
+            bgimagePath:location.state?.bgimagePath,
         }});
       };
 
@@ -208,7 +210,7 @@ const Main = () => {
                 />
                 {isShowTitleInfo && <IsBackInfo func={titleBackFalse} />}
                 <button onClick={titleBackButton} className="menuButton">MENU</button>
-                <div className="scene-section">
+                <div className="scene-section" style={{ backgroundImage: `url(${location.state?.bgimagePath})` }}>
                     <LoveMeter love={likeability} />
                 </div>  
                 {isChoice ? (

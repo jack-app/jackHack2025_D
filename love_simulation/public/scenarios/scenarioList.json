@@ -33,10 +33,11 @@
       "id": 3
     },
     {
-      "title":"ノセ",
-      "image": "/scenarioImages/blank.png",
+      "title":"五十年目",
+      "image": "/scenarioImages/thumbnail_05.jpg",
+      "bgimage": "/scenarioImages/scenario5_images/nose_back.jpg",
       "difficulty": 2,
-      "description": "テストシナリオ2の説明文です．",
+      "description": "長年胸に秘めた想いを抱える主人公が、同い年の女性「千代さん」にアプローチする物語。切なくも温かい恋愛模様を描きます。",
       "cancel_num": 15,
       "id":4
     },
@@ -45,7 +46,7 @@
       "image":"",
       "description":"Panzer vor",
       "cancel_num":3,
-      "id":5
+      "id": 5
     }
     ]
 }

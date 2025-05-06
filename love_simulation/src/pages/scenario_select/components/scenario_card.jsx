@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useNavigate } from 'react-router-dom';
 import "./scenario_card.css";
 
-const ScenarioCard = ({ title, imagePath, difficulty, description, id, cancel_num }) => {
+const ScenarioCard = ({ title, imagePath, bgimagePath, difficulty, description, id, cancel_num }) => {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(`/main`, 
@@ -10,6 +10,7 @@ const ScenarioCard = ({ title, imagePath, difficulty, description, id, cancel_nu
         Id:id, 
         sceneId:1,
         Likeability: 50,
+        bgimagePath:bgimagePath,
         cancel_num: cancel_num
     }});
   };
