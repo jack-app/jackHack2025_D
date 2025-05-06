@@ -1,136 +1,379 @@
 {
-    "scenes":[
-        {
-          "sceneId":1,
-          "speaker":"美香",
-          "text":"ねえねえ、今日暇？",
-          "choices":[
-            {"text":"暇だよ","likeability":1,"nextId":2},
-            {"text":"今暇になった！","likeability":2,"nextId":3},
-            {"text":"今日は忙しいんだ","likeability":-49,"nextId":17}
-          ]
-        },
-        {
-          "sceneId":2,
-          "speaker":"美香",
-          "text":"じゃあさ、一緒に映画見ようよ",
-          "choices":[
-            {"text":"いいね","likeability":0,"nextId":4},
-            {"text":"今日は映画の気分じゃないなあ","likeability":-5,"nextId":5},
-            {"text":"いいね、どんな映画を見よう？","likeability":2,"nextId":4}
-          ]
-        },
-        {
-          "sceneId":3,
-          "speaker":"美香",
-          "text":"やったあ！じゃあ一緒に映画を見ようよ！",
-          "choices":[
-            {"text":"いいね","likeability":0,"nextId":4},
-            {"text":"今日は映画の気分じゃないなあ","likeability":-5,"nextId":5},
-            {"text":"いいね、どんな映画を見よう？","likeability":2,"nextId":4}
-          ]
-        },
-        {
-          "sceneId":4,  
-          "speaker":"美香",
-          "text":"50周年記念の「インナーテスラー」か、今大人気の「魚滅のロッド」のどっちを見よう？",
-          "choices":[
-            {"text":"インナーテスラーにしよう","likeability":0,"nextId":6},
-            {"text":"魚滅のロッドを見よう","likeability":0,"nextId":6},
-            {"text":"間をとって「天空の園ーヴァルハランドー」にしようよ","likeability":-20,"nextId":7}
-          ]
-        },
-        {
-          "sceneId":5,
-          "speaker":"美香",
-          "text":"えー、それでも映画を見ます‼",
-          "continue":4
-
-        },
-        {
-          "sceneId":6,
-          "speaker":"美香",
-          "text":"よし！それにしよう！",
-          "continue":8
-        },
-        {
-          "sceneId":7,
-          "speaker":"美香",
-          "text":"天空の園ーヴァルハランドー？なにそれ聞いたこともないんだけど？\nそれよりもこっちのほうが絶対面白いよっ！",
-          "continue":9
-        },
-        {
-          "sceneId":8,
-          "speaker":"",
-          "text":"数時間後…",
-          "continue":10
-        },
-        {
-          "sceneId":10,
-          "speaker":"美香",
-          "text":"面白かったね～。\nあっ、もうこんな時間だ。",
-          "choices":[
-            {"text":"そろそろ帰らなくていいの？","likeability":-5,"nextId":11},
-            {"text":"今日は泊まってく？","likeability":5,"nextId":12},
-            {"text":"今日はもう解散。家に帰りな？","likeability":-40,"nextId":13}
-          ]
-        },
-        {
-          "sceneId":9,
-          "speaker":"",
-          "text":"数時間後…",
-          "continue":14
-        },
-        {
-         "sceneId":11,
-         "speaker":"美香",
-         "text":"ん～、今日は泊まってく！",
-         "choices":[
-           {"text":"いいよ","likeability":50,"nextId":16},
-           {"text":"だめです。送ってくから帰りなさい","likeability":-10,"nextId":13}            
-         ]
-        },
-        {
-          "sceneId":12,
-          "speaker":"美香",
-          "text":"ん～、今日は泊まってく！",
-          "choices":[
-            {"text":"えっ！？冗談のつもりだったんだけど…","likeability":-100},
-            {"text":"よし、準備します。","likeability":10,"nextId":16}
-          ]
-        },
-        {
-          "sceneId":13,
-          "speaker":"美香",
-          "text":"はぁぁー…はいはい帰りますよ。",
-          "continue":17
-        },
-        {
-            "sceneId":14,
-            "speaker":"美香",
-            "text":"面白かったね～。",
-            "choices":[
-              {"text":"そうだね、もうこんな時間だけど大丈夫？","likeability":-5,"nextId":11},
-              {"text":"うん。面白かった！この後はどうする？こんな時間だけど","likeability":5,"nextId":11},
-              {"text":"天空の園ーヴァルハランドーのほうが面白そうだったのに…","likeability":-40,"nextId":15}
-            ]
-        },
-        {
-          "sceneId":15,
-          "speaker":"美香",
-          "text":"はいはいそうですねー。＿＿今日は帰ります",
-          "continue":17
-        },
-        {
-          "sceneId":16,
-          "speaker":"",
-          "text":"お泊まりエンド" 
-        },
-        {
-          "sceneId":17,
-          "speaker":"美香",
-          "text":"じゃあ、またね\nbad end",
-          "choices":[]
-        }
+  "scenes": [
+    {
+      "sceneId": 1,
+      "speaker": "あなた",
+      "text": "（わしはもう70歳か…。隣に住む千代さんを好きになって、もう50年になる。若い頃は恥ずかしくて何も言えんかったが…このままでは後悔するかもしれん。今日、公園で会えたら、少し話してみようかのぅ。)",
+      "choices": [],
+      "continue": 2
+    },
+    {
+      "sceneId": 2,
+      "speaker": "ナレーション",
+      "text": "いつものように散歩をしていると、公園のベンチに千代さんが座っているのを見つけた。穏やかな日差しの中、編み物をしているようだ。",
+      "choices": [],
+      "continue": 3
+    },
+    {
+      "sceneId": 3,
+      "speaker": "あなた",
+      "text": "（千代さんだ…。よし、どうする？）",
+      "choices": [
+        { "text": "勇気を出して話しかける", "likeability": 2, "nextId": 4 },
+        { "text": "遠くから見守る", "likeability": 0, "nextId": 5 },
+        { "text": "カラスの鳴き真似をして気を引く", "likeability": -10, "nextId": 103 }
       ]
+    },
+    {
+      "sceneId": 4,
+      "speaker": "あなた",
+      "text": "「こんにちは、千代さん。良い天気ですな。」",
+      "choices": [],
+      "continue": 6
+    },
+    {
+      "sceneId": 5,
+      "speaker": "あなた",
+      "text": "（いやいや、ここで声をかけんかったら、いつかけるんじゃ。よし…！)",
+      "choices": [],
+      "continue": 4
+    },
+    {
+      "sceneId": 6,
+      "speaker": "千代",
+      "text": "「あら、こんにちは。本当に気持ちの良い日ですね。あなたもお散歩ですか？」",
+      "choices": [
+        { "text": "ええ、日課なんです", "likeability": 1, "nextId": 7 },
+        { "text": "千代さんに会えるかと思って", "likeability": 3, "nextId": 7 }
+      ]
+    },
+     {
+      "sceneId": 7,
+      "speaker": "千代",
+      "text": "「そうですか。もしよろしければ、隣に座りませんか？」",
+      "choices": [
+        { "text": "もちろんですとも、喜んで", "likeability": 2, "nextId": 8 },
+        { "text": "ありがとうございます", "likeability": 1, "nextId": 8 },
+        { "text": "「いや、わしは地面に座るのが好きなんじゃ」", "likeability": -5, "nextId": 107 }
+      ]
+    },
+    {
+      "sceneId": 8,
+      "speaker": "あなた",
+      "text": "「何を編んでいらっしゃるんですか？ 素敵な色合いですな。」",
+      "choices": [],
+      "continue": 9
+    },
+    {
+      "sceneId": 9,
+      "speaker": "千代",
+      "text": "「これは孫のマフラーですよ。最近冷えてきましたからね。昔から編み物が好きで。」",
+      "choices": [
+        { "text": "お孫さん、喜びますね", "likeability": 3, "nextId": 10 },
+        { "text": "わしの妻も昔はよく…（亡くなった妻の話をする）", "likeability": 0, "nextId": 11 },
+        { "text": "「その毛糸、わしにくれんか？腹巻きを編みたい」", "likeability": -8, "nextId": 109 }
+      ]
+    },
+    {
+      "sceneId": 10,
+      "speaker": "千代",
+      "text": "「ふふ、そうだと嬉しいんですけどね。あなたはお孫さんいらっしゃるの？」",
+      "choices": [
+         { "text": "ええ、可愛い盛りの子がおりますよ", "likeability": 2, "nextId": 12 },
+         { "text": "（孫の話を詳しくする）", "likeability": 1, "nextId": 12 }
+       ]
+    },
+    {
+      "sceneId": 11,
+      "speaker": "あなた",
+      "text": "（亡くなった妻の思い出を語り終えて）「…すみません、湿っぽい話をしてしまいましたな。」",
+      "choices": [],
+      "continue": 13
+    },
+    {
+       "sceneId": 12,
+       "speaker": "千代",
+       "text": "「まあ、それは賑やかでいいですね。子供は宝ですから。」",
+       "choices": [
+          { "text": "千代さんのお孫さんの話も聞かせてください", "likeability": 4, "nextId": 14 },
+          { "text": "本当に、あっという間に大きくなりますな", "likeability": 2, "nextId": 14 }
+        ]
+     },
+    {
+      "sceneId": 13,
+      "speaker": "千代",
+      "text": "「いいえ…。大変でしたね。でも、きっと奥様も空から見守ってくれていますよ。」",
+      "choices": [],
+      "continue": 15
+    },
+    {
+      "sceneId": 14,
+      "speaker": "千代",
+      "text": "（嬉しそうに孫の話をした後）「…あら、もうこんな時間。そろそろ夕飯の支度をしないと。」",
+      "choices": [],
+      "continue": 15
+    },
+    {
+      "sceneId": 15,
+      "speaker": "あなた",
+      "text": "「そうですか。わしも千代さんと話せて楽しかったです。」",
+      "choices": [
+        { "text": "また明日もここで会えますか？", "likeability": 4, "nextId": 16 },
+        { "text": "お気を付けてお帰りください", "likeability": 1, "nextId": 17 },
+        { "text": "「さらばじゃ！」と突然走り去る", "likeability": -12, "nextId": 115 }
+      ]
+    },
+    {
+      "sceneId": 16,
+      "speaker": "千代",
+      "text": "「ええ、天気が良ければ。楽しみにしていますわ。」",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 17,
+      "speaker": "千代",
+      "text": "「ありがとうございます。あなたも。」",
+      "choices": [],
+      "continue": 18
+    },
+    {
+      "sceneId": 18,
+      "speaker": "ナレーション",
+      "text": "それから数日、あなたは公園で千代さんと話す時間が増えた。ある日、千代さんが商店街で重そうな荷物を持っているのを見かける。",
+      "choices": [],
+      "continue": 19
+    },
+    {
+      "sceneId": 19,
+      "speaker": "あなた",
+      "text": "（千代さん、大変そうだ。どうしようか？）",
+      "choices": [
+        { "text": "声をかけて荷物を持つ", "likeability": 5, "nextId": 20 },
+        { "text": "大変そうだな、と見ている", "likeability": -2, "nextId": 21 },
+        { "text": "「荷物運び競争じゃ！」と叫んで荷物を奪う", "likeability": -15, "nextId": 119 }
+      ]
+    },
+    {
+      "sceneId": 20,
+      "speaker": "あなた",
+      "text": "「千代さん、その荷物、重いでしょう。わしが持ちますよ。」",
+      "choices": [],
+      "continue": 22
+    },
+     {
+      "sceneId": 21,
+      "speaker": "あなた",
+      "text": "（わしが手伝わんでも、誰か手伝うじゃろう…。)",
+      "choices": [],
+      "continue": 23
+    },
+    {
+      "sceneId": 22,
+      "speaker": "千代",
+      "text": "「まあ、ありがとうございます！ 助かりますわ。ちょうど腰が痛くて…。本当に、あなたは優しいんですね。」",
+      "choices": [
+         {"text": "千代さんのためなら、これくらい当然ですよ", "likeability": 5, "nextId": 24},
+         {"text": "お互い様です。無理なさらないでください", "likeability": 3, "nextId": 24}
+       ]
+    },
+     {
+      "sceneId": 23,
+      "speaker": "ナレーション",
+      "text": "あなたは千代さんを助けることなく、その場を立ち去った。千代さんは少し寂しそうな顔をしていた…。",
+      "choices": [],
+      "continue": 31
+    },
+    {
+       "sceneId": 24,
+       "speaker": "あなた",
+       "text": "「家までお送りしますよ。」",
+       "choices": [],
+       "continue": 25
+    },
+    {
+      "sceneId": 25,
+      "speaker": "千代",
+      "text": "「本当にすみません、お願いします。」（家までの道すがら、和やかに会話が続く）",
+      "choices": [],
+      "continue": 26
+    },
+    {
+      "sceneId": 26,
+      "speaker": "ナレーション",
+      "text": "千代さんの家の前まで荷物を運ぶと、千代さんがお茶でもどうですか、と誘ってくれた。",
+      "choices": [
+         {"text": "ぜひ、お邪魔させてください", "likeability": 4, "nextId": 27},
+         {"text": "いえ、今日はこれで…", "likeability": 1, "nextId": 28},
+         {"text": "「お茶より酒じゃ！」と懐から一升瓶を取り出す", "likeability": -20, "nextId": 126 }
+       ]
+    },
+    {
+      "sceneId": 27,
+      "speaker": "千代",
+      "text": "「どうぞどうぞ。大したものはありませんけど。」（家にあがり、縁側でお茶を飲む）",
+      "choices": [],
+      "continue": 29
+    },
+    {
+      "sceneId": 28,
+      "speaker": "千代",
+      "text": "「そうですか。では、本当にありがとうございました。」",
+      "choices": [],
+      "continue": 233
+    },
+     {
+      "sceneId": 29,
+      "speaker": "あなた",
+      "text": "（千代さんの家で、二人きりでお茶を飲む日が来るなんて…。今しかないかもしれん。)",
+      "choices": [],
+      "continue": 30
+    },
+    {
+      "sceneId": 30,
+      "speaker": "あなた",
+      "text": "「千代さん…。急にすみません。わしは、50年前、初めてあなたを見た時から…ずっと、あなたが好きでした。この年になって、みっともないかもしれんが…残りの人生、もしよろしければ、こうしてお茶を飲んだり、散歩したり、わしと一緒に過ごしてはいただけんだろうか。」",
+      "choices": [],
+      "continue": 32
+    },
+     {
+      "sceneId": 31,
+      "speaker": "ナレーション",
+      "text": "あなたは千代さんとの距離を縮めることができなかった。特別な想いを伝える勇気も出ず、かといって決定的に嫌われることもなく、二人はただの顔見知りの隣人として、穏やかだが少し寂しい日々を過ごしていくのだった。",
+      "choices": [],
+      "continue": 35
+    },
+     {
+       "sceneId": 32,
+       "speaker": "千代",
+       "text": "「……。」",
+       "choices": [],
+       "continue": 33
+     },
+     {
+       "sceneId": 33,
+       "speaker": "千代",
+       "text": "「…まあ…驚きました。でも…嬉しいです。私も、ずっとあなたのこと、気になっていました。若い頃、あなたが照れながら挨拶してくれたこと、覚えてますよ。…こちらこそ、よろしくお願いします。」",
+       "choices": [],
+       "continue": 34
+     },
+     {
+        "sceneId": 34,
+        "speaker": "ナレーション",
+        "text": "縁側に暖かい日差しが差し込む中、二人は静かに微笑み合った。50年の時を経て結ばれた想い。これからの日々は、きっと穏やかで、幸せな時間に満ちているだろう。",
+        "choices": [],
+        "continue": 35
+     },
+     {
+       "sceneId": 35,
+       "speaker": "システム",
+       "text": "シナリオはここで終了です。あなたの選択が、二人の未来を紡ぎました。",
+       "choices": []
+    },
+    {
+      "sceneId": 103,
+      "speaker": "あなた",
+      "text": "「カァー！カァー！」（渾身のカラスの鳴き真似をする）",
+      "choices": [],
+      "continue": 104
+   },
+   {
+     "sceneId": 104,
+     "speaker": "千代",
+     "text": "「あら…？まあ、あなたでしたか。どうなさったんです、急にカラスの真似なんて…。」（少し怪訝な顔をしている）",
+     "choices": [],
+     "continue": 4
+  },
+  {
+    "sceneId": 107,
+    "speaker": "あなた",
+    "text": "「いや、わしは地面に座るのが好きなんじゃ」",
+    "choices": [],
+    "continue": 108
+  },
+  {
+     "sceneId": 108,
+     "speaker": "千代",
+     "text": "「まあ…そうですか…。」（少し困惑した様子でベンチに座る。あなたは隣の地面にあぐらをかく）",
+     "choices": [],
+     "continue": 8
+   },
+    {
+      "sceneId": 109,
+      "speaker": "あなた",
+      "text": "「その毛糸、わしにくれんか？腹巻きを編みたい」",
+      "choices": [],
+      "continue": 110
+    },
+    {
+       "sceneId": 110,
+       "speaker": "千代",
+       "text": "「まあ、これは孫のですから…。それに、腹巻きには少し色が可愛らしすぎるかもしれませんね。ご自分で毛糸を買われた方がよろしいかと。」（困ったように笑っている）",
+       "choices": [],
+       "continue": 10
+     },
+     {
+       "sceneId": 115,
+       "speaker": "あなた",
+       "text": "「さらばじゃ！」（千代さんに背を向け、全力で走り去る）",
+       "choices": [],
+       "continue": 116
+     },
+     {
+       "sceneId": 116,
+       "speaker": "千代",
+       "text": "「えっ！？ちょ、ちょっと…！」（あっけにとられて、走り去るあなたを見送る）",
+       "choices": [],
+       "continue": 231
+     },
+     {
+       "sceneId": 119,
+       "speaker": "あなた",
+       "text": "「荷物運び競争じゃ！」（そう叫ぶと、あなたは千代さんの荷物をひったくり、商店街を駆け抜けていった）",
+       "choices": [],
+       "continue": 120
+     },
+     {
+       "sceneId": 120,
+       "speaker": "千代",
+       "text": "「きゃっ！な、何をするんですか突然！？ど、泥棒ーっ！」（商店街に千代さんの悲鳴が響く）",
+       "choices": [],
+       "continue": 232
+     },
+     {
+       "sceneId": 126,
+       "speaker": "あなた",
+       "text": "「お茶より酒じゃ！」（あなたはどこからともなく一升瓶を取り出し、千代さんに突き出した）",
+       "choices": [],
+       "continue": 127
+     },
+     {
+        "sceneId": 127,
+        "speaker": "千代",
+        "text": "「まあ！どこからそんなものを…！？ひっ…！わ、私はお酒はちょっと…。」（目を丸くして後ずさる）",
+        "choices": [],
+        "continue": 233
+      },
+    {
+       "sceneId": 231,
+       "speaker": "ナレーション",
+       "text": "あなたは訳もなく走り去り、千代さんを呆然とさせた。翌日、公園でばったり会ってしまったが、千代さんは気まずそうに目をそらし、足早に去っていった。あなたの奇行は、二人の間に埋めがたい溝を作ってしまったようだ。",
+       "choices": [],
+       "continue": 35
+    },
+    {
+       "sceneId": 232,
+       "speaker": "ナレーション",
+       "text": "あなたは荷物を持って走り去り、『商店街の韋駄天』として一時的に名を馳せたが、もちろん千代さんとの関係は完全に破綻した。その後、あなたは千代さんの家の前を通るたびに、冷たい視線を感じることになるのだった。",
+       "choices": [],
+       "continue": 35
+    },
+    {
+       "sceneId": 233,
+       "speaker": "ナレーション",
+       "text": "千代さんにドン引きされ、すごすごと退散したあなた。その後、どんなに公園でアプローチしても、千代さんは警戒心を解いてくれず、お茶に誘われることは二度となかった。お酒は、TPOをわきまえるべきだったようだ…。",
+       "choices": [],
+       "continue": 35
+     }
+  ]
 }
