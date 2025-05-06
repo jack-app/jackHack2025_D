@@ -7,7 +7,8 @@ const Home = () => {
     const backgrounds = [
         '/images/school_bench_noon.jpg',
         '/images/school_bench_night.jpg',
-        '/images/restaurant_evening.jpg'
+        '/images/restaurant_evening.jpg',
+        '/images/thumbnail_05.jpg',
     ];
     const [currentBg, setCurrentBg] = useState(0);
 
