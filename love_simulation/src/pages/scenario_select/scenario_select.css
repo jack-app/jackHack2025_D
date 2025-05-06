@@ -1,12 +1,12 @@
-.scenario_select { 
+.scenario_select {
     background-color: rgb(223, 255, 227);
     display: flex;
     gap: 5%;
-    height: 90vh; 
+    height: 90vh;
     margin: 0;
-    justify-content: center; 
+    justify-content: center;
     align-items: center;
-    position: relative; 
+    position: relative;
 }
 
 .header {
@@ -41,5 +41,71 @@
 .dummy {
     width: 50px;
     height: 50px;
-    margin: auto; 
+    margin: auto;
+}
+
+.dli-chevron-round-right {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    line-height: 1;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    transform: translateX(-25%) rotate(45deg);
+}
+
+.dli-chevron-round-right::before,
+.dli-chevron-round-right::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    border-radius: 0.1em;
+}
+
+.dli-chevron-round-right::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.2em;
+}
+
+.dli-chevron-round-right::after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0.2em;
+}
+
+.dli-chevron-round-left {
+    display: inline-block;
+    vertical-align: middle;
+    color: #333;
+    line-height: 1;
+    position: relative;
+    width: 1.5em;
+    height: 1.5em;
+    transform: translateX(25%) rotate(-135deg);
+}
+
+.dli-chevron-round-left::before,
+.dli-chevron-round-left::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+    border-radius: 0.1em;
+}
+
+.dli-chevron-round-left::before {
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.2em;
+}
+
+.dli-chevron-round-left::after {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 0.2em;
 }
