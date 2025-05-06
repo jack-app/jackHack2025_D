@@ -9,14 +9,35 @@
   margin: 0;
   position: relative;
   user-select: none;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+  animation: backgroundScale 25s ease-in-out infinite;
+  transition: background-image 4s ease-in-out;
+}
+
+.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: -1;
 }
 
 #title1 {
   color: #fe84f8;
   font-size: 2.5rem;
+  font-weight: bold;
   animation: title1 2s ease-out infinite;
   text-align: center;
   line-height: 1.3;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px black;
 }
 
 #title2 {
@@ -24,8 +45,13 @@
   font-size: clamp(16rem, 15vw, 24rem);
   animation: title2 2s ease-out infinite;
   margin: 0;
+  font-weight:500;
   text-align: center;
   line-height: 1.1;
+  position: relative;
+  z-index: 1;
+  text-shadow: 1px 1px 2px black;
+
 }
 
 #startButton {
@@ -44,6 +70,8 @@
   text-align: center;
   line-height: 1.2;
   transition: transform 0.3s ease, opacity 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 #startButton:hover {
@@ -66,6 +94,7 @@
   text-align: center;
   line-height: 1.2;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1;
 }
 
 #creditButton:hover {
@@ -89,5 +118,38 @@
   }
   50%, 70% {
     transform: scale(0.95);
+  }
+}
+
+@keyframes backgroundScale {
+  0% {
+    background-size: 110% 110%;
+    background-position: -1% 1%;
+    filter: brightness(1);
+  }
+  20% {
+    background-size: 115% 115%;
+    background-position: 1% -1%;
+    filter: brightness(1.05);
+  }
+  40% {
+    background-size: 112% 112%;
+    background-position: -2% -1%;
+    filter: brightness(1);
+  }
+  60% {
+    background-size: 118% 118%;
+    background-position: 0% 2%;
+    filter: brightness(0.95);
+  }
+  80% {
+    background-size: 113% 113%;
+    background-position: 2% 0%;
+    filter: brightness(1);
+  }
+  100% {
+    background-size: 110% 110%;
+    background-position: -1% 1%;
+    filter: brightness(1);
   }
 }
