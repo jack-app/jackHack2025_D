@@ -115,7 +115,8 @@
     {
       "sceneId":17,
       "speaker": "美香",
-      "text":"終"
+      "text":"終",
+      "choices":[]
     }
   ]
 }

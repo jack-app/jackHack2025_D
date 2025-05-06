@@ -95,7 +95,8 @@
           "speaker":"美香",
           "text":"ん～、今日は泊まってく！",
           "choices":[
-            {"text":"えっ！？冗談のつもりだったんだけど…","likeability":-100},
+            {"text":"えっ！？冗談のつもりだったんだけど…","likeability":-100,  "nextId":17},
+            {"text":"だめです。送ってくから帰りなさい","likeability":-10,"nextId":13},
             {"text":"よし、準備します。","likeability":10,"nextId":16}
           ]
         },

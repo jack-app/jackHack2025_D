@@ -132,7 +132,8 @@ const Main = () => {
                         Id: location.state?.Id,
                         sceneId: branch.upperId,
                         Likeability: likeability,
-                        cancel_num: location.state.cancel_num
+                        cancel_num: location.state.cancel_num,
+                        bgimagePath:location.state?.bgimagePath,
                     },
                 });
             }else{
@@ -141,7 +142,8 @@ const Main = () => {
                         Id: location.state?.Id,
                         sceneId: branch.lowerId,
                         Likeability: likeability,
-                        cancel_num: location.state.cancel_num
+                        cancel_num: location.state.cancel_num,
+                        bgimagePath:location.state?.bgimagePath,
                     },
                 });
             }
@@ -161,6 +163,7 @@ const Main = () => {
                     Id: location.state?.Id,
                     sceneId: nextId,
                     Likeability: likeability,
+                    bgimagePath:location.state?.bgimagePath,
                 },
             });
         } else {
@@ -207,6 +210,7 @@ const Main = () => {
                     setLikeability={setLikeability}
                     cancel_num={location.state?.cancel_num}
                     setIsChoice={setIsChoice}
+                    bgimagePath={location.state?.bgimagePath}
                 />
                 {isShowTitleInfo && <IsBackInfo func={titleBackFalse} />}
                 <button onClick={titleBackButton} className="menuButton">MENU</button>

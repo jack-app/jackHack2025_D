@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 
 
-const CancelButton = ({ history,setHistory,id,setSceneId,setLikeability,cancel_num,setIsChoice }) => {
+const CancelButton = ({ history,setHistory,id,setSceneId,setLikeability,cancel_num,setIsChoice,bgimagePath }) => {
 
   const navigate = useNavigate();
 
@@ -17,7 +17,8 @@ const CancelButton = ({ history,setHistory,id,setSceneId,setLikeability,cancel_n
         Id:id,
         sceneId:last.sceneId,
         Likeability: last.likeability,
-        cancel_num: cancel_num - 1
+        cancel_num: cancel_num - 1,
+        bgimagePath:bgimagePath,
     }});
   };
 

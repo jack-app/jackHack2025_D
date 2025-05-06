@@ -11,8 +11,8 @@
     },  
     {
       "title": "一瞬で終わった",
-      "image": "/scenarioImages/scenario1_images/サムネ.png",
-      "bgimage": "love_simulation/public/scenarioImages/scenario1_images/中盤.png",
+      "image": "/scenarioImages/thumbnail_1.png",
+      "bgimage": "/scenarioImages/thumbnail_1.png",
       "difficulty": 5,
       "description": "近寄りがたい雰囲気のさきさん。そんな彼女との日々を描いたノンフィクションストーリー",
       "cancel_num": 2,
