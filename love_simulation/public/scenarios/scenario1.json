@@ -5,7 +5,7 @@
         "speaker": "あなた",
         "text": "(同じ塾のさきさんはクールな感じがしてすごい気になるな)。\n(どうしようか...）",
         "choices": [
-        { "text": "なにもしない", "likeability": 5,  "nextId": 4 },
+        { "text": "なにもしない", "likeability": 0,  "nextId": 4 },
         { "text": "普通に話かける",   "likeability": 0,  "nextId": 2 },
         { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 37 }
         ]
@@ -36,7 +36,7 @@
         "speaker": "あなた",
         "text": "(今回の席替えでさきさんと近くの席になれたぞ、でも相変わらず話しかけづらいな〜)\n(どうしようか...)",
         "choices": [
-        { "text": "なにもしない", "likeability": 5,  "nextId": 9 },
+        { "text": "なにもしない", "likeability": 0,  "nextId": 9 },
         { "text": "話しかける",   "likeability": 2,  "nextId": 6 },
         { "text": "連絡先交換を頼む",       "likeability": -60, "nextId": 37 }
        
@@ -77,7 +77,7 @@
         "choices": [
         { "text": "お菓子をあげる", "likeability": 5,  "nextId": 11 },
         { "text": "さきに告白する",       "likeability": -100,  "nextId": 12 },
-        { "text": "なにもしない",       "likeability": 2,  "nextId": 100 }
+        { "text": "なにもしない",       "likeability": 0,  "nextId": 37 }
         ]
     },
     {
@@ -99,7 +99,7 @@
         "text": "お菓子ありがとう！めちゃくちゃ美味しかった。なんで私にくれたの？",
         "speaker": "さき",
         "choices": [
-        { "text": "仲良くなりたいって思ったから",   "likeability": 2,  "nextId": 14 },
+        { "text": "仲良くなりたいって思ったから",   "likeability": -8,  "nextId": 14 },
         { "text": "なんとなく？",   "likeability": 3,  "nextId": 14 },
         { "text": "美味しかったからさきにも食べて欲しかった",   "likeability": 3,  "nextId": 14 }
         ]
@@ -109,7 +109,7 @@
         "text": "なるほどねー。\n前は話したことなかったのに最近めっちゃ話すようになったよねー。\n今度一緒にどっか行かない？\nどこか行きたいところある？",
         "speaker": "さき",
         "choices": [
-        { "text": "スポッチャ行きたいなー",   "likeability": 5,  "nextId": 15 },
+        { "text": "スポッチャ行きたいなー",   "likeability": -10,  "nextId": 15 },
         { "text": "さきが観たいって言ってた映画はどうー？",   "likeability": 10,  "nextId": 15 }
         ]
     },
@@ -243,7 +243,7 @@
         "text": "(っ...!)",
         "speaker": "あなた",
         "choices": [
-        { "text": "好きです、付き合ってください", "likeability": 5,  "nextId": 32 },
+        { "text": "好きです、付き合ってください", "likeability": -8,  "nextId": 32 },
         { "text": "いやーさきのこと好きかもしれない、でも自分に対して興味ないよね",   "likeability": 2,  "nextId": 32 }
         ]
     },
